@@ -1,1065 +1,1999 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NaijaBuild Digital | Web Solutions for Awka, Onitsha, Asaba & Lagos</title>
+  <meta name="description" content="Oganiru Digital — World-class web design & software agency headquartered in Awka, serving Onitsha, Asaba, Lagos, and Africans in the Diaspora." />
+  <title>Oganiru Digital | Web Engineering for Home & Diaspora (Awka HQ)</title>
   <style>
-    /* ================= CSS VARIABLES & THEMES ================= */
+    /* ==========================================================================
+       CSS VARIABLES & THEME (Cultural Pride + Global Tech Standard)
+       ========================================================================== */
     :root {
-      --bg-primary: #f8faf9;
-      --bg-secondary: #ffffff;
-      --bg-dark: #06281e;
-      --bg-dark-alt: #0b3b2d;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-      --text-light: #f9fafb;
-      --accent-gold: #d97706;
-      --accent-gold-hover: #b45309;
-      --accent-green: #059669;
-      --border-color: #e5e7eb;
-      --card-shadow: 0 10px 25px -5px rgba(6, 40, 30, 0.08);
+      --bg-primary: #071912;       /* Deep Emerald / Forest Night */
+      --bg-secondary: #0c241b;     /* Elevated Card Surface */
+      --bg-light: #faf8f4;         /* Warm Ivory / Off-White Section */
+      --bg-white: #ffffff;
+      --accent-gold: #d99b26;      /* Royal Igbo / West African Gold */
+      --accent-gold-hover: #f0b138;
+      --accent-green: #16a34a;     /* Naija Emerald */
+      --text-light: #f8fafc;
+      --text-muted-light: #cbd5e1;
+      --text-dark: #0f172a;
+      --text-muted-dark: #475569;
+      --border-dark: rgba(217, 155, 38, 0.22);
+      --border-light: #e2e8f0;
       --radius: 12px;
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
       --transition: all 0.25s ease;
     }
 
-    body.dark-mode {
-      --bg-primary: #071310;
-      --bg-secondary: #0d211b;
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --border-color: #1f3a32;
-      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    body.data-saver * {
-      animation: none !important;
-      transition: none !important;
-      box-shadow: none !important;
+    html {
+      scroll-behavior: smooth;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    body { background: var(--bg-primary); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
-    a { text-decoration: none; color: inherit; }
-    button { cursor: pointer; font-family: inherit; border: none; }
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-    /* Igbo Uli / Akwete Inspired Geometric Divider */
+    /* Subtle Uli / Akwete Geometric Pattern Divider */
     .uli-divider {
-      height: 14px;
+      height: 10px;
       width: 100%;
-      background-color: var(--bg-dark);
+      background-color: var(--bg-primary);
       background-image: repeating-linear-gradient(
         45deg,
-        transparent,
-        transparent 10px,
-        rgba(217, 119, 6, 0.35) 10px,
-        rgba(217, 119, 6, 0.35) 14px
+        var(--accent-gold) 0,
+        var(--accent-gold) 6px,
+        transparent 6px,
+        transparent 14px
       );
+      opacity: 0.9;
     }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    .section { padding: 72px 0; }
-    .section-header { text-align: center; max-width: 720px; margin: 0 auto 48px; }
-    .badge {
-      display: inline-block;
-      background: rgba(217, 119, 6, 0.14);
-      color: var(--accent-gold);
-      font-weight: 700;
-      font-size: 0.8rem;
-      padding: 6px 14px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 12px;
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-    .section-header h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); line-height: 1.2; margin-bottom: 14px; }
-    .section-header p { color: var(--text-muted); font-size: 1.05rem; }
 
-    /* ================= TOP UTILITY & NAVBAR ================= */
+    /* ==========================================================================
+       TOP UTILITY BAR (Trust, CAC, Timezones, Currency Switcher)
+       ========================================================================== */
     .top-bar {
-      background: #041b14;
-      color: #d1fae5;
+      background: #04100b;
+      color: var(--text-muted-light);
       font-size: 0.82rem;
       padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid var(--border-dark);
     }
-    .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-    .utility-controls { display: flex; gap: 10px; align-items: center; }
-    .util-btn {
-      background: rgba(255,255,255,0.1);
+
+    .top-bar-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .trust-badges-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .trust-badges-mini span strong {
+      color: var(--accent-gold);
+    }
+
+    .top-controls {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .currency-select, .lite-toggle {
+      background: var(--bg-secondary);
       color: #fff;
+      border: 1px solid var(--accent-gold);
       padding: 4px 10px;
       border-radius: 6px;
-      font-size: 0.78rem;
-      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
     }
-    .util-btn.active { background: var(--accent-gold); color: #fff; }
 
+    /* ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== */
     header {
-      background: var(--bg-dark);
-      color: var(--text-light);
+      background: rgba(7, 25, 18, 0.97);
+      backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 900;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid var(--border-dark);
     }
-    .nav-wrap { display: flex; justify-content: space-between; align-items: center; height: 72px; }
-    .logo { font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
-    .logo span { color: var(--accent-gold); }
-    .nav-links { display: flex; gap: 24px; align-items: center; }
-    .nav-links a { font-size: 0.92rem; font-weight: 500; opacity: 0.9; transition: var(--transition); }
-    .nav-links a:hover { color: var(--accent-gold); opacity: 1; }
-    .btn-primary {
-      background: var(--accent-gold);
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
       color: #fff;
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent-gold), #b45309);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #071912;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    .logo small {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: var(--accent-gold);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.93rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    nav a:hover {
+      color: var(--accent-gold);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       padding: 11px 20px;
       border-radius: 8px;
       font-weight: 700;
       font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
       transition: var(--transition);
+    }
+
+    .btn-gold {
+      background: var(--accent-gold);
+      color: #071912;
+    }
+
+    .btn-gold:hover {
+      background: var(--accent-gold-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid var(--accent-gold);
+    }
+
+    .btn-outline:hover {
+      background: rgba(217, 155, 38, 0.14);
+    }
+
+    .btn-dark {
+      background: var(--bg-primary);
+      color: #fff;
+    }
+
+    .btn-dark:hover {
+      background: #103527;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero {
+      background: radial-gradient(circle at top right, #123c2c 0%, var(--bg-primary) 65%);
+      color: var(--text-light);
+      padding: 72px 0 64px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-    }
-    .btn-primary:hover { background: var(--accent-gold-hover); transform: translateY(-1px); }
-    .btn-outline {
-      border: 1.5px solid rgba(255,255,255,0.3);
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 8px;
+      background: rgba(217, 155, 38, 0.14);
+      border: 1px solid var(--border-dark);
+      color: var(--accent-gold);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.83rem;
       font-weight: 600;
-      font-size: 0.92rem;
-      background: transparent;
-      transition: var(--transition);
+      margin-bottom: 18px;
     }
-    .btn-outline:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
 
-    /* ================= HERO SECTION ================= */
-    .hero {
-      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-alt) 100%);
-      color: var(--text-light);
-      padding: 72px 0 80px;
+    .hero h1 {
+      font-size: clamp(2.1rem, 4vw, 3.35rem);
+      line-height: 1.14;
+      font-weight: 800;
+      margin-bottom: 18px;
     }
-    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
-    .hero h1 { font-size: clamp(2.1rem, 4.2vw, 3.2rem); line-height: 1.15; margin-bottom: 18px; }
-    .hero h1 span { color: var(--accent-gold); }
-    .hero p { font-size: 1.1rem; color: #d1fae5; margin-bottom: 28px; max-width: 580px; }
-    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 32px; }
-    .hero-stats {
+
+    .hero h1 span {
+      color: var(--accent-gold);
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--text-muted-light);
+      margin-bottom: 26px;
+      max-width: 620px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .hero-guarantees {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.14);
+      gap: 12px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.84rem;
     }
-    .stat-item strong { display: block; font-size: 1.5rem; color: var(--accent-gold); }
-    .stat-item span { font-size: 0.82rem; color: #a7f3d0; }
 
-    /* Hero Interactive Mockup Card */
-    .hero-mockup {
-      background: #0f2922;
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    .hero-guarantees div strong {
+      display: block;
+      color: var(--accent-gold);
+      font-size: 0.95rem;
     }
-    .browser-dots { display: flex; gap: 6px; margin-bottom: 14px; }
-    .browser-dots i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-    .mockup-screen {
-      background: #ffffff;
-      color: #111827;
-      border-radius: 10px;
-      padding: 18px;
-    }
-    .mockup-tag { background: #ecfdf5; color: #059669; font-size: 0.72rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
-    .mockup-screen h4 { margin: 10px 0 6px; font-size: 1.05rem; }
-    .mockup-bar { height: 8px; background: #e5e7eb; border-radius: 4px; margin-bottom: 8px; }
-    .mockup-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
-    .m-box { background: #f3f4f6; padding: 10px; border-radius: 8px; font-size: 0.8rem; }
-    .m-box b { display: block; font-size: 1rem; color: #06281e; }
 
-    /* ================= TRUST & CAC STRIP ================= */
-    .trust-strip {
+    /* Right Hero Card: Quick Domain & Callback Widget */
+    .hero-card {
       background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border-color);
-      padding: 20px 0;
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
     }
-    .trust-items {
+
+    .hero-card h3 {
+      color: var(--accent-gold);
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+
+    .hero-card p {
+      font-size: 0.88rem;
+      margin-bottom: 14px;
+    }
+
+    .domain-box {
       display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .domain-box input, .callback-form input, .callback-form select {
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: #06140e;
+      color: #fff;
+      font-size: 0.92rem;
+    }
+
+    #domainResult {
+      font-size: 0.85rem;
+      min-height: 22px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .divider-line {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 16px 0;
+    }
+
+    .callback-form {
+      display: grid;
+      gap: 10px;
+    }
+
+    /* ==========================================================================
+       CLIENT LOGO & CORRIDOR TICKER
+       ========================================================================== */
+    .corridor-strip {
+      background: #fff;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .corridor-flex {
+      display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
+      gap: 14px;
       font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--text-muted);
+      color: var(--text-muted-dark);
     }
-    .trust-badge { display: flex; align-items: center; gap: 8px; }
-    .trust-badge span { color: var(--accent-green); font-weight: 800; }
 
-    /* ================= 8-CARD SAMPLE SHOWCASE ================= */
-    .filter-tabs {
+    .corridor-tags {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 36px;
     }
-    .filter-btn {
-      padding: 8px 18px;
+
+    .corridor-tags span {
+      background: #f1f5f9;
+      padding: 5px 12px;
       border-radius: 999px;
-      background: var(--bg-secondary);
-      color: var(--text-main);
-      border: 1px solid var(--border-color);
       font-weight: 600;
-      font-size: 0.88rem;
+      color: var(--bg-primary);
+      font-size: 0.82rem;
+    }
+
+    /* ==========================================================================
+       SECTION COMMON STYLES
+       ========================================================================== */
+    section {
+      padding: 72px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 44px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      color: #9a6700;
+      background: rgba(217, 155, 38, 0.16);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      color: var(--bg-primary);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .section-header p {
+      color: var(--text-muted-dark);
+      font-size: 1.02rem;
+    }
+
+    /* ==========================================================================
+       1. THE 8-CARD SAMPLE WEBSITE GRID
+       ========================================================================== */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
       transition: var(--transition);
     }
+
     .filter-btn.active, .filter-btn:hover {
-      background: var(--bg-dark);
-      color: #fff;
-      border-color: var(--bg-dark);
+      background: var(--bg-primary);
+      color: var(--accent-gold);
+      border-color: var(--bg-primary);
     }
 
     .samples-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
     }
+
     .sample-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
+      background: #fff;
+      border: 1px solid var(--border-light);
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: var(--card-shadow);
       display: flex;
       flex-direction: column;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
       transition: var(--transition);
     }
-    .sample-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
-    .sample-preview {
-      height: 155px;
-      padding: 16px;
-      color: #fff;
+
+    .sample-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(7, 25, 18, 0.14);
+      border-color: var(--accent-gold);
+    }
+
+    .mockup-preview {
+      height: 165px;
+      padding: 14px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      color: #fff;
       position: relative;
     }
-    .sample-city-tag {
+
+    .browser-dots {
+      display: flex;
+      gap: 5px;
+    }
+
+    .browser-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .mockup-badge {
       align-self: flex-start;
-      background: rgba(0,0,0,0.45);
+      background: rgba(0, 0, 0, 0.45);
       backdrop-filter: blur(4px);
       padding: 4px 10px;
       border-radius: 6px;
       font-size: 0.72rem;
       font-weight: 700;
-    }
-    .sample-ui-pill {
-      background: rgba(255,255,255,0.16);
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 0.78rem;
-      font-weight: 600;
-    }
-    .sample-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-    .sample-body h3 { font-size: 1.08rem; margin-bottom: 8px; }
-    .sample-body p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 18px; flex: 1; }
-    .sample-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .btn-sm {
-      padding: 8px 10px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-align: center;
-    }
-    .btn-demo { background: var(--bg-primary); color: var(--text-main); border: 1px solid var(--border-color); }
-    .btn-demo:hover { border-color: var(--accent-gold); }
-    .btn-quote { background: var(--bg-dark); color: #fff; }
-    .btn-quote:hover { background: var(--accent-gold); }
-
-    /* ================= DOMAIN CHECKER & COST ESTIMATOR ================= */
-    .tools-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 28px; }
-    .tool-box {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--card-shadow);
-    }
-    .tool-box h3 { font-size: 1.3rem; margin-bottom: 8px; }
-    .tool-box p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; }
-
-    .domain-input-group { display: flex; gap: 8px; margin-bottom: 12px; }
-    .input-field, .select-field {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      background: var(--bg-primary);
-      color: var(--text-main);
-      font-size: 0.95rem;
-    }
-    .domain-result {
-      margin-top: 12px;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      display: none;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
     }
 
-    .calc-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0; }
-    .check-label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      background: var(--bg-primary);
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-      cursor: pointer;
+    .mockup-ui-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      line-height: 1.25;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     }
-    .quote-display {
-      background: var(--bg-dark);
-      color: #fff;
+
+    .card-body {
       padding: 18px;
-      border-radius: 10px;
-      margin-top: 16px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
+      flex-direction: column;
+      flex-grow: 1;
     }
-    .quote-price { font-size: 1.65rem; font-weight: 800; color: var(--accent-gold); }
 
-    /* ================= MULTI-CITY MAP & PHYSICAL ADDRESS ================= */
-    .city-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
-    .city-tab {
-      padding: 10px 18px;
-      border-radius: 8px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      color: var(--text-main);
+    .card-region {
+      font-size: 0.76rem;
       font-weight: 700;
-      font-size: 0.9rem;
+      color: #9a6700;
+      margin-bottom: 6px;
     }
-    .city-tab.active { background: var(--accent-gold); color: #fff; border-color: var(--accent-gold); }
 
-    .map-layout {
+    .card-body h3 {
+      font-size: 1.08rem;
+      color: var(--bg-primary);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .card-body p {
+      font-size: 0.87rem;
+      color: var(--text-muted-dark);
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+
+    .card-features {
+      list-style: none;
+      font-size: 0.8rem;
+      color: #334155;
+      margin-bottom: 16px;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 10px;
+    }
+
+    .card-features li {
+      margin-bottom: 4px;
+    }
+
+    .card-features li::before {
+      content: "✓ ";
+      color: var(--accent-green);
+      font-weight: 800;
+    }
+
+    .card-actions {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 24px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
     }
-    .map-frame { width: 100%; height: 380px; border: 0; }
-    .office-details { padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
-    .office-details h3 { font-size: 1.3rem; margin-bottom: 10px; }
-    .detail-row { margin-bottom: 14px; font-size: 0.92rem; }
-    .detail-row strong { display: block; color: var(--accent-gold); font-size: 0.8rem; text-transform: uppercase; }
 
-    /* ================= TESTIMONIALS & FAQ ================= */
-    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .testi-card {
+    .card-actions .btn {
+      padding: 9px 10px;
+      font-size: 0.8rem;
+    }
+
+    /* ==========================================================================
+       2. DIASPORA & LOCAL TRUST + WHY MORE THAN INSTAGRAM SECTION
+       ========================================================================== */
+    .dark-section {
+      background: var(--bg-primary);
+      color: var(--text-light);
+    }
+
+    .dark-section .section-header h2 {
+      color: #fff;
+    }
+
+    .dark-section .section-header p {
+      color: var(--text-muted-light);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .trust-box {
       background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--border-dark);
       padding: 24px;
       border-radius: var(--radius);
     }
-    .testi-card p { font-style: italic; font-size: 0.94rem; margin-bottom: 16px; }
-    .testi-author strong { display: block; font-size: 0.95rem; }
-    .testi-author span { font-size: 0.82rem; color: var(--text-muted); }
 
-    .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .trust-box h3 {
+      color: var(--accent-gold);
+      font-size: 1.12rem;
+      margin-bottom: 10px;
+    }
+
+    .trust-box p {
+      font-size: 0.92rem;
+      color: var(--text-muted-light);
+    }
+
+    /* ==========================================================================
+       3. PRICING, CURRENCY TOGGLE & INTERACTIVE COST ESTIMATOR
+       ========================================================================== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 44px;
+    }
+
+    .price-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 28px;
+      position: relative;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .price-card.featured {
+      border: 2px solid var(--accent-gold);
+      transform: scale(1.02);
+    }
+
+    .popular-tag {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--accent-gold);
+      color: #071912;
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    .price-amount {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--bg-primary);
+      margin: 12px 0;
+    }
+
+    .price-card ul {
+      list-style: none;
+      margin: 18px 0 24px;
+      font-size: 0.9rem;
+    }
+
+    .price-card ul li {
+      padding: 6px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .price-card ul li::before {
+      content: "✔ ";
+      color: var(--accent-green);
+      font-weight: 700;
+    }
+
+    /* Interactive Cost Estimator */
+    .estimator-box {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .estimator-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .est-check {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f8fafc;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+
+    .estimator-summary {
+      background: var(--bg-primary);
+      color: #fff;
+      padding: 24px;
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    .estimator-summary .est-total {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+      margin: 10px 0;
+    }
+
+    /* ==========================================================================
+       4. 4-STEP ROADMAP & FAQ ACCORDION
+       ========================================================================== */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-bottom: 50px;
+    }
+
+    .step-item {
+      background: #fff;
+      padding: 22px;
+      border-radius: var(--radius);
+      border-top: 4px solid var(--accent-gold);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .step-num {
+      font-weight: 900;
+      color: var(--accent-gold);
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .faq-list {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
     .faq-item {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      margin-bottom: 10px;
       overflow: hidden;
     }
-    .faq-q {
+
+    .faq-question {
       width: 100%;
       text-align: left;
-      padding: 18px 20px;
-      background: transparent;
-      color: var(--text-main);
+      background: none;
+      border: none;
+      padding: 16px 20px;
       font-weight: 700;
       font-size: 0.98rem;
+      color: var(--bg-primary);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      cursor: pointer;
     }
-    .faq-a { padding: 0 20px 18px; color: var(--text-muted); font-size: 0.92rem; display: none; }
-    .faq-item.open .faq-a { display: block; }
 
-    /* ================= FOOTER & FLOATING ACTION ================= */
-    footer { background: var(--bg-dark); color: #d1fae5; padding: 60px 0 30px; }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; margin-bottom: 40px; }
-    .footer-col h4 { color: #fff; margin-bottom: 14px; font-size: 1rem; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 20px;
+    .faq-answer {
+      padding: 0 20px 16px;
+      font-size: 0.92rem;
+      color: var(--text-muted-dark);
+      display: none;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* ==========================================================================
+       5. PHYSICAL LOCATION MAP SECTION (AWKA HEADQUARTERS ONLY)
+       ========================================================================== */
+    .location-section {
+      background: #fff;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .address-card {
+      background: var(--bg-primary);
+      color: #fff;
+      padding: 32px;
+      border-radius: var(--radius);
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
+    }
+
+    .address-card h3 {
+      color: var(--accent-gold);
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .address-details {
+      list-style: none;
+      margin: 18px 0;
+      font-size: 0.94rem;
+    }
+
+    .address-details li {
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .address-details strong {
+      color: var(--accent-gold);
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .map-frame-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid var(--accent-gold);
+      min-height: 380px;
+      position: relative;
+      background: #e2e8f0;
+    }
+
+    .map-frame-wrap iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      border: 0;
+      display: block;
+    }
+
+    /* ==========================================================================
+       6. BOLD FINAL CTA BANNER & FOOTER
+       ========================================================================== */
+    .final-cta {
+      background: linear-gradient(135deg, #071912 0%, #123c2c 100%);
+      color: #fff;
+      text-align: center;
+      padding: 64px 20px;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      margin-bottom: 14px;
+    }
+
+    .final-cta p {
+      color: var(--text-muted-light);
+      max-width: 650px;
+      margin: 0 auto 26px;
+    }
+
+    footer {
+      background: #04100b;
+      color: var(--text-muted-light);
+      padding: 48px 0 24px;
+      font-size: 0.88rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+
+    footer h4 {
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+      font-size: 0.98rem;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer ul li {
+      margin-bottom: 8px;
+    }
+
+    footer a {
+      color: var(--text-muted-light);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--accent-gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 18px;
+      display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       gap: 12px;
       font-size: 0.82rem;
     }
 
+    /* ==========================================================================
+       FLOATING WHATSAPP WIDGET & INTERACTIVE MODAL
+       ========================================================================== */
     .whatsapp-float {
       position: fixed;
       bottom: 22px;
       right: 22px;
       background: #25d366;
       color: #fff;
-      padding: 13px 20px;
+      padding: 13px 18px;
       border-radius: 999px;
       font-weight: 700;
-      font-size: 0.92rem;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+      font-size: 0.9rem;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
       z-index: 950;
       display: flex;
       align-items: center;
       gap: 8px;
+      transition: var(--transition);
     }
 
-    /* ================= MODAL ================= */
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+    }
+
     .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.65);
+      background: rgba(0, 0, 0, 0.72);
       display: none;
-      align-items: center;
-      justify-content: center;
+      place-items: center;
       padding: 20px;
       z-index: 1000;
     }
-    .modal-backdrop.show { display: flex; }
-    .modal-card {
-      background: var(--bg-secondary);
-      color: var(--text-main);
-      max-width: 500px;
-      width: 100%;
-      border-radius: 14px;
-      padding: 28px;
-      position: relative;
-    }
-    .modal-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: var(--bg-primary);
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      font-weight: 700;
-      color: var(--text-main);
+
+    .modal-backdrop.active {
+      display: grid;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid, .tools-grid, .map-layout { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+    .modal-card {
+      background: #fff;
+      max-width: 560px;
+      width: 100%;
+      border-radius: var(--radius);
+      padding: 28px;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #64748b;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1080px) {
+      .samples-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-grid, .location-grid, .estimator-box {
+        grid-template-columns: 1fr;
+      }
+      .pricing-grid, .trust-grid, .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 66px;
+        left: 0;
+        right: 0;
+        background: var(--bg-primary);
+        padding: 20px;
+        border-bottom: 1px solid var(--border-dark);
+      }
+      nav ul.show {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .samples-grid, .pricing-grid, .trust-grid, .steps-grid, .footer-grid, .estimator-options {
+        grid-template-columns: 1fr;
+      }
+      .hero-guarantees {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Utility Bar -->
+  <!-- TOP UTILITY BAR: CAC VERIFICATION, LIVE WAT TIME & CURRENCY SWITCHER -->
   <div class="top-bar">
-    <div class="container">
-      <div>📍 Serving Businesses in <strong>Awka • Onitsha • Asaba • Lagos</strong> | CAC RC: 1948271</div>
-      <div class="utility-controls">
-        <button id="dataSaverBtn" class="util-btn" onclick="toggleDataSaver()">⚡ Data-Saver: OFF</button>
-        <button id="themeBtn" class="util-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
-        <a href="tel:+2348000000000" class="util-btn">📞 Call: 0800-NAIJA-WEB</a>
+    <div class="container top-bar-inner">
+      <div class="trust-badges-mini">
+        <span>🏛️ <strong>CAC Registered:</strong> RC-7482910</span>
+        <span>📍 <strong>HQ:</strong> Awka, Anambra State</span>
+        <span>🕒 <strong>Awka / Lagos Time (WAT):</strong> <span id="watClock">--:--</span></span>
+        <span>🟢 <strong>99.9% Uptime</strong></span>
+      </div>
+      <div class="top-controls">
+        <label for="currencySwitcher" style="font-size:0.78rem;">Currency:</label>
+        <select id="currencySwitcher" class="currency-select" aria-label="Select Currency">
+          <option value="NGN" selected>🇳🇬 NGN (₦)</option>
+          <option value="USD">🇺🇸 USD ($)</option>
+          <option value="GBP">🇬🇧 GBP (£)</option>
+          <option value="EUR">🇪🇺 EUR (€)</option>
+        </select>
       </div>
     </div>
   </div>
 
-  <!-- Sticky Navigation -->
+  <!-- STICKY NAVIGATION -->
   <header>
     <div class="container nav-wrap">
-      <a href="#" class="logo">Naija<span>Build</span>.ng</a>
-      <nav class="nav-links">
-        <a href="#samples">8 Sample Websites</a>
-        <a href="#estimator">Naira Quote & Domain</a>
-        <a href="#locations">Our Offices (Map)</a>
-        <a href="#faq">FAQs</a>
+      <a href="#" class="logo">
+        <div class="logo-mark">OG</div>
+        <div>
+          Oganiru Digital
+          <small>Awka • Onitsha • Asaba • Lagos • Diaspora</small>
+        </div>
+      </a>
+
+      <nav>
+        <ul id="navMenu">
+          <li><a href="#samples">8 Sample Websites</a></li>
+          <li><a href="#diaspora">Diaspora & Local Trust</a></li>
+          <li><a href="#pricing">Packages & Estimator</a></li>
+          <li><a href="#process">How We Work</a></li>
+          <li><a href="#location">Awka Office & Map</a></li>
+        </ul>
       </nav>
-      <div style="display:flex; gap:10px;">
-        <button class="btn-outline" onclick="openCallbackModal()">15-Min Callback</button>
-        <a href="#samples" class="btn-primary">Explore Samples</a>
+
+      <div class="nav-actions">
+        <button class="btn btn-gold" onclick="openQuoteModal('Custom Website Project')">Get a Quote</button>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">☰</button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <span class="badge">Built for Nigerian Commerce</span>
-        <h1>Websites That Turn Visitors Into <span>Paying Customers</span> Across Awka, Onitsha, Asaba & Lagos.</h1>
-        <p>Stop losing serious buyers because you only have an Instagram page or WhatsApp number. We build fast, Paystack-ready, high-trust websites tailored to how Nigerians actually buy and do business.</p>
-        <div class="hero-ctas">
-          <a href="#samples" class="btn-primary">View 8 Industry Samples ↓</a>
-          <a href="#estimator" class="btn-outline">Calculate Cost in Naira (₦)</a>
+        <div class="hero-pill">
+          ⚡ Built in Awka for Commercial Empires at Home & Abroad
         </div>
-        <div class="hero-stats">
-          <div class="stat-item"><strong>140+</strong><span>Nigerian Brands Launched</span></div>
-          <div class="stat-item"><strong>&lt; 1.8s</strong><span>Load Speed on 3G/4G</span></div>
-          <div class="stat-item"><strong>24/7</strong><span>Solar-Powered Dev Hub</span></div>
-        </div>
-      </div>
+        <h1>
+          World-Class Websites for <span>Awka, Onitsha, Asaba, Lagos</span> & the Diaspora.
+        </h1>
+        <p>
+          Whether you are scaling a wholesale empire in Onitsha Main Market, launching an estate in Asaba or Lekki, or investing from London, Houston, or Toronto—we engineer high-converting websites you can inspect in person at our Awka office.
+        </p>
 
-      <!-- Interactive Live Business Preview Card -->
-      <div class="hero-mockup">
-        <div class="browser-dots">
-          <i style="background:#ef4444"></i>
-          <i style="background:#f59e0b"></i>
-          <i style="background:#10b981"></i>
+        <div class="hero-ctas">
+          <a href="#samples" class="btn btn-gold">Explore Our 8 Sample Websites ↓</a>
+          <a href="#location" class="btn btn-outline">📍 Visit Our Awka Office</a>
         </div>
-        <div class="mockup-screen">
-          <span class="mockup-tag">● LIVE ORDER NOTIFICATION</span>
-          <h4>Onitsha & Lagos Wholesale Portal</h4>
-          <p style="font-size:0.82rem; color:#4b5563; margin-bottom:12px;">Automated waybill generation + instant Paystack bank transfer confirmation.</p>
-          <div class="mockup-bar" style="width:85%"></div>
-          <div class="mockup-bar" style="width:60%"></div>
-          <div class="mockup-metrics">
-            <div class="m-box"><span>Monthly Online Sales</span><b>₦18,450,000</b></div>
-            <div class="m-box"><span>WhatsApp Leads</span><b>+310% Growth</b></div>
+
+        <div class="hero-guarantees">
+          <div>
+            <strong>100% Anti-Ghosting SLA</strong>
+            Milestone escrow & clear timelines
+          </div>
+          <div>
+            <strong>Diaspora Proxy-Build</strong>
+            Zero travel needed; live Zoom/WhatsApp demos
+          </div>
+          <div>
+            <strong>Paystack & Stripe Ready</strong>
+            Accept Naira (₦), USD ($), GBP (£) & USSD
           </div>
         </div>
       </div>
+
+      <!-- RIGHT HERO WIDGET: .COM.NG / .COM DOMAIN CHECKER + CALLBACK -->
+      <div class="hero-card">
+        <h3>1. Instant Business Domain Checker</h3>
+        <p>Check if your brand name is still available before someone else registers it.</p>
+        <div class="domain-box">
+          <input type="text" id="domainInput" placeholder="e.g. chukwumagroup.com.ng" />
+          <button class="btn btn-gold" onclick="checkDomain()">Check</button>
+        </div>
+        <div id="domainResult"></div>
+
+        <div class="divider-line"></div>
+
+        <h3>2. Request an Instant Callback (24hr Proposal)</h3>
+        <p>Busy at the shop, site, or abroad? Drop your contact for a swift call or WhatsApp voice brief.</p>
+        <form class="callback-form" onsubmit="handleCallback(event)">
+          <input type="text" id="cbName" placeholder="Your Full Name / Business Name" required />
+          <input type="tel" id="cbPhone" placeholder="WhatsApp / Phone (+234, +1, +44...)" required />
+          <select id="cbLocation">
+            <option value="Awka">Location: Awka / Anambra</option>
+            <option value="Onitsha">Location: Onitsha / Nnewi</option>
+            <option value="Asaba">Location: Asaba / Delta</option>
+            <option value="Lagos">Location: Lagos</option>
+            <option value="Diaspora">Location: Diaspora (UK / US / Canada / EU)</option>
+          </select>
+          <button type="submit" class="btn btn-gold" style="width:100%;">Request Free Strategy Call</button>
+        </form>
+      </div>
     </div>
   </section>
-
-  <!-- Trust & Local Compliance Bar -->
-  <div class="trust-strip">
-    <div class="container trust-items">
-      <div class="trust-badge"><span>✓</span> CAC Registered & Verifiable</div>
-      <div class="trust-badge"><span>✓</span> Paystack, Flutterwave & USSD Ready</div>
-      <div class="trust-badge"><span>✓</span> NDPR Data Compliant</div>
-      <div class="trust-badge"><span>✓</span> Free Google My Business Ranking Setup</div>
-      <div class="trust-badge"><span>✓</span> 50% Deposit • 30% Staging • 20% Launch</div>
-    </div>
-  </div>
 
   <div class="uli-divider"></div>
 
-  <!-- 8-Card Sample Website Showcase Grid -->
-  <section id="samples" class="section">
+  <!-- REGIONAL CORRIDOR STRIP -->
+  <div class="corridor-strip">
+    <div class="container corridor-flex">
+      <strong>Serving High-Growth Commercial Hubs:</strong>
+      <div class="corridor-tags">
+        <span>🏛️ Awka Capital Territory</span>
+        <span>🚢 Onitsha Main Market & Bridgehead</span>
+        <span>🌉 Asaba GRA & Okpanam</span>
+        <span>🏙️ Lagos (Lekki, VI, Ikeja, Trade Fair)</span>
+        <span>🌍 UK, USA, Canada & EU Diaspora</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SECTION 1: 8-CARD SAMPLE WEBSITE GRID
+       ======================================================================== -->
+  <section id="samples">
     <div class="container">
       <div class="section-header">
-        <span class="badge">Our Proven Blueprints</span>
-        <h2>8 Ready-to-Deploy Website Samples Built for Your Industry</h2>
-        <p>Click any sample below to preview what we can design, customize, and launch for your business in 7 to 21 days.</p>
+        <span class="section-tag">Proven Capability Showcase</span>
+        <h2>8 Ready-to-Build Website Blueprints We Deliver</h2>
+        <p>
+          Don’t settle for generic templates. Below are 8 industry-tailored web platforms our engineering team designs, builds, and deploys from scratch for your business.
+        </p>
       </div>
 
       <!-- Filter Tabs -->
-      <div class="filter-tabs">
+      <div class="filter-bar">
         <button class="filter-btn active" onclick="filterSamples('all', this)">All 8 Samples</button>
-        <button class="filter-btn" onclick="filterSamples('commerce', this)">Commerce & Logistics</button>
-        <button class="filter-btn" onclick="filterSamples('realestate', this)">Real Estate & Construction</button>
-        <button class="filter-btn" onclick="filterSamples('hospitality', this)">Hospitality & Health</button>
-        <button class="filter-btn" onclick="filterSamples('corporate', this)">Fintech & Education</button>
+        <button class="filter-btn" onclick="filterSamples('commerce', this)">Trade & Logistics</button>
+        <button class="filter-btn" onclick="filterSamples('diaspora', this)">Real Estate & Diaspora</button>
+        <button class="filter-btn" onclick="filterSamples('corporate', this)">Fintech, Health & Education</button>
       </div>
 
-      <!-- 8 Cards Container -->
-      <div class="samples-grid" id="samplesGrid"></div>
+      <!-- 8 Sample Cards Grid -->
+      <div class="samples-grid" id="samplesGrid">
+
+        <!-- SAMPLE 1 -->
+        <article class="sample-card" data-category="commerce">
+          <div class="mockup-preview" style="background: linear-gradient(135deg, #064e3b, #047857);">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <span class="mockup-badge">Sample #01 • B2B Wholesale</span>
+            <div class="mockup-ui-title">Onitsha & Trade Fair Import-Export Portal</div>
+          </div>
+          <div class="card-body">
+            <div class="card-region">Target: Onitsha • Lagos • Importers</div>
+            <h3>Wholesale & Merchant E-Commerce Hub</h3>
+            <p>Built for major distributors and plaza merchants to sell cartons/bales nationwide and across West Africa.</p>
+            <ul class="card-features">
+              <li>Bulk MOQ & tiered distributor pricing</li>
+              <li>NGN ₦ / USD $ / RMB multi-currency invoice</li>
+              <li>Instant WhatsApp order & waybill generator</li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn btn-outline" style="color:var(--bg-primary);" onclick="openSamplePreview(0)">Live Preview</button>
+              <button class="btn btn-gold" onclick="openQuoteModal('Onitsha/Lagos Wholesale E-Commerce')">Build This</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- SAMPLE 2 -->
+        <article class="sample-card" data-category="diaspora">
+          <div class="mockup-preview" style="background: linear-gradient(135deg, #78350f, #b45309);">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <span class="mockup-badge">Sample #02 • Real Estate</span>
+            <div class="mockup-ui-title">Awka & Asaba Diaspora Luxury Estates</div>
+          </div>
+          <div class="card-body">
+            <div class="card-region">Target: Awka • Asaba • Lekki • Diaspora</div>
+            <h3>Verified Land & Housing Portal</h3>
+            <p>Eliminates "Omo-Onile" and land-scam fears for diaspora buyers investing in Anambra, Delta, and Lagos.</p>
+            <ul class="card-features">
+              <li>C-of-O & Survey Plan verification badges</li>
+              <li>Drone inspection video & plot map selector</li>
+              <li>Mortgage & installment payment calculator</li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn btn-outline" style="color:var(--bg-primary);" onclick="openSamplePreview(1)">Live Preview</button>
+              <button class="btn btn-gold" onclick="openQuoteModal('Awka/Asaba Real Estate Portal')">Build This</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- SAMPLE 3 -->
+        <article class="sample-card" data-category="corporate">
+          <div class="mockup-preview" style="background: linear-gradient(135deg, #1e1b4b, #3730a3);">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <span class="mockup-badge">Sample #03 • Fintech & Escrow</span>
+            <div class="mockup-ui-title">Cross-Border Remittance & Escrow App</div>
+          </div>
+          <div class="card-body">
+            <div class="card-region">Target: Lagos • UK/US/Canada Diaspora</div>
+            <h3>Fintech, BDC & Escrow Trust Platform</h3>
+            <p>High-security financial web application for safe diaspora-to-Nigeria payments and milestone project escrow.</p>
+            <ul class="card-features">
+              <li>Live USD/GBP/CAD to Naira rate ticker</li>
+              <li>NDPR & bank-grade SSL security architecture</li>
+              <li>Automated KYC & transaction receipt portal</li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn btn-outline" style="color:var(--bg-primary);" onclick="openSamplePreview(2)">Live Preview</button>
+              <button class="btn btn-gold" onclick="openQuoteModal('Fintech & Escrow Web App')">Build This</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- SAMPLE 4 -->
+        <article class="sample-card" data-category="diaspora">
+          <div class="mockup-preview" style="background: linear-gradient(135deg, #4c0519, #9f1239);">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <span class="mockup-badge">Sample #04 • Hospitality</span>
+            <div class="mockup-ui-title">Executive Hotel, Lounge & Event Arena</div>
+          </div>
+          <div class="card-body">
+            <div class="card-region">Target: Awka • Asaba • Victoria Island</div>
+            <h3>Hotel Booking & Event Hall Showcase</h3>
+            <p>Designed for luxury hotels and wedding/event centers hosting December homecomings and corporate summits.</p>
+            <ul class="card-features">
+              <li>Direct room booking with Paystack/card</li>
+              <li>360° virtual banquet hall walkthrough</li>
+              <li>Live event date availability calendar</li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn btn-outline" style="color:var(--bg-primary);" onclick="openSamplePreview(3)">Live Preview</button>
+              <button class="btn btn-gold" onclick="openQuoteModal('Hotel & Event Center Portal')">Build This</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- SAMPLE 5 -->
+        <article class="sample-card" data-category="corporate">
+          <div class="mockup-preview" style="background: linear-gradient(135deg, #0f766e, #0d9488);">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <span class="mockup-badge">Sample #05 • Healthcare</span>
+            <div class="mockup-ui-title">Specialist Hospital & Diaspora Care Portal</div>
+          </div>
+          <div class="card-body">
+            <div class="card-region">Target: Awka • Onitsha • Lagos • Diaspora</div>
+            <h3>Diagnostic Center & Telemedicine Hub</h3>
+            <p>Lets diaspora children book and pay for medical checkups for their parents back home in Nigeria seamlessly.</p>
+            <ul class="card-features">
+              <li>Online doctor appointment & HMO verifier</li>
+              <li>Encrypted lab test result download portal</li>
+              <li>Diaspora family health-plan sponsorship</li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn btn-outline" style="color:var(--bg-primary);" onclick="openSamplePreview(4)">Live Preview</button>
+              <button class="btn btn-gold" onclick="openQuoteModal('Specialist Hospital & Diagnostic Portal')">Build This</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- SAMPLE 6 -->
+        <article class="sample-card" data-category="corporate">
+          <div class="mockup-preview" style="background: linear-gradient(135deg, #1d4ed8, #1e40af);">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <span class="mockup-badge">Sample #06 • EdTech & Schools</span>
+            <div class="mockup-ui-title">International Academy & CBT Portal</div>
+          </div>
+          <div class="card-body">
+            <div class="card-region">Target: Anambra • Delta • Lagos Schools</div>
+            <h3>Private School & Result-Checker System</h3>
+            <p>Elevates premier nursery, secondary, and tertiary institutions with automated admissions and parent portals.</p>
+            <ul class="card-features">
+              <li>Online admission forms & entrance exam booking</li>
+              <li>Termly PIN/scratch-card result checker</li>
+              <li>Online school fees payment & receipting</li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn btn-outline" style="color:var(--bg-primary);" onclick="openSamplePreview(5)">Live Preview</button>
+              <button class="btn btn-gold" onclick="openQuoteModal('Private School & Result Portal')">Build This</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- SAMPLE 7 -->
+        <article class="sample-card" data-category="commerce">
+          <div class="mockup-preview" style="background: linear-gradient(135deg, #334155, #0f172a);">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <span class="mockup-badge">Sample #07 • Logistics & Cargo</span>
+            <div class="mockup-ui-title">Interstate Haulage & Waybill Tracker</div>
+          </div>
+          <div class="card-body">
+            <div class="card-region">Target: Onitsha–Lagos–Abuja Corridors</div>
+            <h3>Fleet, Dispatch & Cargo Tracking Web App</h3>
+            <p>Built for transport companies, courier services, and clearing agents moving goods across Nigeria.</p>
+            <ul class="card-features">
+              <li>Real-time waybill number status tracker</li>
+              <li>Instant interstate freight cost calculator</li>
+              <li>Corporate & merchant pickup scheduler</li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn btn-outline" style="color:var(--bg-primary);" onclick="openSamplePreview(6)">Live Preview</button>
+              <button class="btn btn-gold" onclick="openQuoteModal('Logistics & Waybill Tracking Site')">Build This</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- SAMPLE 8 -->
+        <article class="sample-card" data-category="diaspora">
+          <div class="mockup-preview" style="background: linear-gradient(135deg, #3f6212, #4d7c0f);">
+            <div class="browser-dots"><span></span><span></span><span></span></div>
+            <span class="mockup-badge">Sample #08 • Agro-Export</span>
+            <div class="mockup-ui-title">Diaspora Agro-Processing & Export Hub</div>
+          </div>
+          <div class="card-body">
+            <div class="card-region">Target: Anambra/Delta Farms • Global Buyers</div>
+            <h3>Agribusiness & Commodity Export Platform</h3>
+            <p>Connects palm oil, cashew, cassava, and packaged food producers with international off-takers and investors.</p>
+            <ul class="card-features">
+              <li>Export specification & NEPC compliance showcase</li>
+              <li>Diaspora farm co-investment ROI dashboard</li>
+              <li>International bulk quote & sample request</li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn btn-outline" style="color:var(--bg-primary);" onclick="openSamplePreview(7)">Live Preview</button>
+              <button class="btn btn-gold" onclick="openQuoteModal('Agro-Export & Investment Platform')">Build This</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
   </section>
 
-  <!-- Domain Checker & Naira Quote Calculator -->
-  <section id="estimator" class="section" style="background: rgba(6, 40, 30, 0.03);">
+  <!-- ========================================================================
+       SECTION 2: CULTURAL TRUST, DIASPORA PROXY-BUILD & INSTAGRAM COMPARISON
+       ======================================================================== -->
+  <section id="diaspora" class="dark-section">
     <div class="container">
       <div class="section-header">
-        <span class="badge">Transparent Pricing</span>
-        <h2>Check Your Business Domain & Estimate Your Project in Naira (₦)</h2>
-        <p>No hidden charges. Secure your official <strong>.com.ng</strong> or <strong>.ng</strong> domain and get an instant ballpark estimate.</p>
+        <span class="section-tag" style="background:rgba(217,155,38,0.2); color:var(--accent-gold);">Built on Igbo & Nigerian Commercial Values</span>
+        <h2>Why Serious Businesses Choose Us Over "Hit-and-Run" Freelancers</h2>
+        <p>
+          We combine physical accountability in Awka with global software engineering standards.
+        </p>
       </div>
 
-      <div class="tools-grid">
-        <!-- Domain Availability Checker -->
-        <div class="tool-box">
-          <h3>1. Instant .NG / .COM.NG Domain Search</h3>
-          <p>Replace <em>yourbusiness@gmail.com</em> with official company emails and protect your brand name.</p>
-          <div class="domain-input-group">
-            <input type="text" id="domainInput" class="input-field" placeholder="e.g. anambramotors.com.ng" />
-            <button class="btn-primary" onclick="checkDomain()">Search</button>
-          </div>
-          <div id="domainResult" class="domain-result"></div>
-          <div style="margin-top:20px; font-size:0.85rem; color:var(--text-muted);">
-            <strong>Included with every build:</strong> Free SSL Security Certificate, 5 Custom Business Emails, and 1-Year High-Speed Cloud Hosting.
-          </div>
+      <div class="trust-grid">
+        <div class="trust-box">
+          <h3>🏢 Physical Office Accountability in Awka</h3>
+          <p>We are not a faceless WhatsApp number. You, your lawyer, or your family representative in Anambra can walk into our Awka headquarters anytime to inspect your project live.</p>
         </div>
-
-        <!-- Interactive Cost Estimator -->
-        <div class="tool-box">
-          <h3>2. Interactive Website Cost Calculator</h3>
-          <p>Select your website category and desired features to see an instant estimate.</p>
-          <select id="projectType" class="select-field" onchange="calculateQuote()">
-            <option value="180000">Corporate / Business Profile Website (₦180,000)</option>
-            <option value="320000">Real Estate / Hotel Booking Platform (₦320,000)</option>
-            <option value="450000">Wholesale / Retail E-Commerce Store (₦450,000)</option>
-            <option value="600000">Custom Logistics / School / Hospital Portal (₦600,000)</option>
-          </select>
-
-          <div class="calc-options">
-            <label class="check-label"><input type="checkbox" value="50000" onchange="calculateQuote()"> Paystack / USSD Checkout (+₦50k)</label>
-            <label class="check-label"><input type="checkbox" value="35000" onchange="calculateQuote()"> Local Google SEO Pack (+₦35k)</label>
-            <label class="check-label"><input type="checkbox" value="40000" onchange="calculateQuote()"> WhatsApp Order Bot (+₦40k)</label>
-            <label class="check-label"><input type="checkbox" value="60000" onchange="calculateQuote()"> Copywriting & Pro Photos (+₦60k)</label>
-          </div>
-
-          <div class="quote-display">
-            <div>
-              <span style="font-size:0.8rem; color:#a7f3d0;">Estimated Total Investment</span>
-              <div class="quote-price" id="totalQuote">₦180,000</div>
-            </div>
-            <button class="btn-primary" onclick="openCallbackModal()">Lock In This Quote →</button>
-          </div>
+        <div class="trust-box">
+          <h3>🌍 Diaspora "Proxy-Build" & Gift-a-Site</h3>
+          <p>Living in London, Houston, Atlanta, or Toronto? Book a timezone-synced Zoom review, pay securely via Stripe/Wire, or sponsor a professional website for your family's business back home.</p>
+        </div>
+        <div class="trust-box">
+          <h3>📱 Why Instagram & WhatsApp Alone Aren't Enough</h3>
+          <p>Social media algorithms hide your posts and scammers clone IG pages daily. A verified <strong>.com</strong> or <strong>.com.ng</strong> website proves corporate legitimacy to banks, embassies, and bulk buyers.</p>
+        </div>
+        <div class="trust-box">
+          <h3>⚡ Ultra-Fast on 3G/4G & Low-Data Friendly</h3>
+          <p>Engineered under 2.5 seconds load time with WebP compression so customers browsing on mobile data in Onitsha Main Market or Lekki traffic never bounce.</p>
+        </div>
+        <div class="trust-box">
+          <h3>🔒 Milestone Escrow & Rescue Service</h3>
+          <p>Pay in transparent stages (40% Kickoff • 30% Staging Review • 30% Final Launch). Did a previous developer abandon your site? Ask about our 7-Day Website Rescue.</p>
+        </div>
+        <div class="trust-box">
+          <h3>🎓 Local SEO + Staff Video Training</h3>
+          <p>We optimize your Google Business Profile so you rank when clients search in Awka, Asaba, Onitsha, or Lagos—and record custom phone-friendly training videos for your staff.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Physical Office Locations & Interactive Map -->
-  <section id="locations" class="section">
+  <!-- ========================================================================
+       SECTION 3: TRANSPARENT PACKAGES + INTERACTIVE COST ESTIMATOR
+       ======================================================================== -->
+  <section id="pricing">
     <div class="container">
       <div class="section-header">
-        <span class="badge">Real Offices • Real People</span>
-        <h2>Visit Our Physical Offices Across South-East, South-South & Lagos</h2>
-        <p>We don't hide behind anonymous DMs. Walk into any of our hubs or request an on-site visit to your shop, plaza, or corporate office.</p>
+        <span class="section-tag">Transparent Pricing (Toggle Currency Top-Right)</span>
+        <h2>Clear Packages & Instant Project Cost Estimator</h2>
+        <p>No hidden charges. Every package includes free SSL security, mobile-first design, WhatsApp integration, and full domain ownership in your name.</p>
       </div>
 
-      <div class="city-tabs">
-        <button class="city-tab active" onclick="selectCity('awka', this)">Awka HQ (Anambra)</button>
-        <button class="city-tab" onclick="selectCity('onitsha', this)">Onitsha Hub (Anambra)</button>
-        <button class="city-tab" onclick="selectCity('asaba', this)">Asaba Desk (Delta)</button>
-        <button class="city-tab" onclick="selectCity('lagos', this)">Lagos Office (Lekki)</button>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>SME & Plaza Starter</h3>
+          <p style="font-size:0.88rem; color:var(--text-muted-dark);">Ideal for clinics, law firms, boutiques & growing brands.</p>
+          <div class="price-amount" data-ngn="250000">₦250,000</div>
+          <ul>
+            <li>Up to 5 Custom Mobile-First Pages</li>
+            <li>One-Click WhatsApp & Call Integration</li>
+            <li>Google Maps & Local SEO Setup</li>
+            <li>Free SSL Certificate & Business Emails</li>
+            <li>Delivery in 7–10 Working Days</li>
+          </ul>
+          <button class="btn btn-dark" style="width:100%;" onclick="openQuoteModal('SME & Plaza Starter Package')">Select Starter</button>
+        </div>
+
+        <div class="price-card featured">
+          <span class="popular-tag">Most Popular</span>
+          <h3>Corporate & E-Commerce Pro</h3>
+          <p style="font-size:0.88rem; color:var(--text-muted-dark);">Ideal for wholesalers, hotels, schools & real estate firms.</p>
+          <div class="price-amount" data-ngn="550000">₦550,000</div>
+          <ul>
+            <li>Up to 12 Pages + Admin Dashboard</li>
+            <li>Paystack, Flutterwave & Stripe Payments</li>
+            <li>Product/Property Inventory Management</li>
+            <li>Multi-Currency Display (NGN / USD / GBP)</li>
+            <li>Staff Video Training + 60 Days Free Support</li>
+          </ul>
+          <button class="btn btn-gold" style="width:100%;" onclick="openQuoteModal('Corporate & E-Commerce Pro Package')">Select Pro Package</button>
+        </div>
+
+        <div class="price-card">
+          <h3>Custom Web App / Enterprise</h3>
+          <p style="font-size:0.88rem; color:var(--text-muted-dark);">Ideal for fintechs, logistics trackers & diaspora platforms.</p>
+          <div class="price-amount" data-ngn="1200000">₦1,200,000+</div>
+          <ul>
+            <li>Custom React / Next.js / Node.js Architecture</li>
+            <li>User Portals, Waybill or Escrow Logic</li>
+            <li>NDPR Compliance & Bank-Grade Security</li>
+            <li>Dedicated Project Manager in Awka</li>
+            <li>Priority 24/7 SLA Maintenance</li>
+          </ul>
+          <button class="btn btn-dark" style="width:100%;" onclick="openQuoteModal('Custom Web App / Enterprise')">Book Architecture Call</button>
+        </div>
       </div>
 
-      <div class="map-layout">
-        <iframe
-          id="cityMapFrame"
-          class="map-frame"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=7.0550%2C6.2050%2C7.0850%2C6.2280&layer=mapnik&marker=6.2165%2C7.0700">
-        </iframe>
-
-        <div class="office-details">
-          <div>
-            <h3 id="officeTitle">Awka Head Office</h3>
-            <div class="detail-row">
-              <strong>Street Address</strong>
-              <span id="officeAddress">Suite 204, Millennium Plaza, Enugu-Onitsha Expressway, Awka, Anambra State</span>
-            </div>
-            <div class="detail-row">
-              <strong>Local Landmark Direction</strong>
-              <span id="officeLandmark">2 minutes drive after Aroma Junction heading towards Amawbia Flyover, directly opposite the Zenith Bank branch.</span>
-            </div>
-            <div class="detail-row">
-              <strong>Direct Regional Line</strong>
-              <span id="officePhone">+234 (0) 803 555 0191</span>
-            </div>
+      <!-- INTERACTIVE PROJECT COST ESTIMATOR -->
+      <div class="estimator-box">
+        <div>
+          <h3 style="color:var(--bg-primary); margin-bottom:6px;">🧮 Interactive Project Cost Estimator</h3>
+          <p style="font-size:0.9rem; color:var(--text-muted-dark);">Tick the features your business needs to see an instant ballpark estimate in your selected currency:</p>
+          <div class="estimator-options">
+            <label class="est-check"><input type="checkbox" checked disabled /> Core 5-Page Responsive Site</label>
+            <label class="est-check"><input type="checkbox" class="est-addon" data-ngn="120000" onchange="calculateEstimate()" /> Online Store / Cart (Paystack)</label>
+            <label class="est-check"><input type="checkbox" class="est-addon" data-ngn="90000" onchange="calculateEstimate()" /> Multi-Currency (NGN/USD/GBP)</label>
+            <label class="est-check"><input type="checkbox" class="est-addon" data-ngn="150000" onchange="calculateEstimate()" /> Customer / Student / Patient Portal</label>
+            <label class="est-check"><input type="checkbox" class="est-addon" data-ngn="75000" onchange="calculateEstimate()" /> Booking / Hotel / Event Calendar</label>
+            <label class="est-check"><input type="checkbox" class="est-addon" data-ngn="60000" onchange="calculateEstimate()" /> Copywriting + Local Google SEO</label>
           </div>
-          <button class="btn-primary" style="width:100%; justify-content:center;" onclick="openCallbackModal()">Book In-Person Office Meeting</button>
+        </div>
+
+        <div class="estimator-summary">
+          <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; color:var(--accent-gold);">Estimated Investment</div>
+          <div class="est-total" id="estTotalDisplay">₦250,000</div>
+          <p style="font-size:0.82rem; color:var(--text-muted-light); margin-bottom:14px;">Includes 40% kickoff milestone option & 1-year free SSL.</p>
+          <button class="btn btn-gold" style="width:100%;" onclick="openQuoteModal('Custom Estimated Build (' + document.getElementById('estTotalDisplay').innerText + ')')">Lock In This Estimate</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Local Testimonials -->
-  <section class="section" style="background: rgba(6, 40, 30, 0.03);">
+  <!-- ========================================================================
+       SECTION 4: 4-STEP ROADMAP & FAQ ACCORDION
+       ======================================================================== -->
+  <section id="process" style="background:#f1efe9;">
     <div class="container">
       <div class="section-header">
-        <span class="badge">Client Results</span>
-        <h2>Trusted by Business Owners Who Value Speed & Integrity</h2>
+        <span class="section-tag">Zero Guesswork</span>
+        <h2>Our 4-Step Delivery Process</h2>
+        <p>From your first WhatsApp chat or Awka office visit to global launch.</p>
       </div>
-      <div class="testimonials-grid">
-        <div class="testi-card">
-          <p>"Before NaijaBuild created our wholesale catalog, buyers from Abuja and Port Harcourt had to travel to Onitsha Main Market just to price goods. Now they order and pay via transfer online."</p>
-          <div class="testi-author">
-            <strong>Chief Emeka Okafor</strong>
-            <span>CEO, Okafor Building & Solar Supplies — Onitsha</span>
-          </div>
-        </div>
-        <div class="testi-card">
-          <p>"Our boutique hotel along Nnebisi Road used to lose 15% commission to foreign booking sites. Their direct booking engine paid for itself in the first 3 weeks."</p>
-          <div class="testi-author">
-            <strong>Mrs. Eseoghene Chukwuma</strong>
-            <span>Managing Director, Royal Crest Suites — Asaba</span>
-          </div>
-        </div>
-        <div class="testi-card">
-          <p>"Clean code, fast mobile load speed, and zero stories about power outage delaying delivery. Their Awka and Lekki teams delivered our estate portal ahead of schedule."</p>
-          <div class="testi-author">
-            <strong>Engr. Tunde Adeyemi</strong>
-            <span>Partner, Apex Horizon Properties — Lagos & Awka</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Localized FAQs -->
-  <section id="faq" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">Straight Answers</span>
-        <h2>Frequently Asked Questions by Nigerian Business Owners</h2>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-num">01. Discovery</div>
+          <h4>Brief & Strategy</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted-dark); margin-top:6px;">We clarify your goals via Zoom, WhatsApp voice note, or in person at our Awka office and issue a clear milestone agreement.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">02. UI/UX Prototype</div>
+          <h4>Visual Design</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted-dark); margin-top:6px;">You preview the exact look, colors, and mobile layout of your website before full engineering begins.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">03. Engineering</div>
+          <h4>Code & Payments</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted-dark); margin-top:6px;">We build fast, secure pages, integrate Paystack/Stripe/WhatsApp, and test on Android, iPhone, and desktop.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">04. Launch & Train</div>
+          <h4>Go Live & Handover</h4>
+          <p style="font-size:0.88rem; color:var(--text-muted-dark); margin-top:6px;">We deploy your domain, submit to Google Search, and hand over full admin access plus recorded training videos.</p>
+        </div>
       </div>
+
+      <div class="section-header" style="margin-bottom:24px;">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
       <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">1. Will I fully own my domain name and website after launch? <span>+</span></button>
-          <div class="faq-a">Yes, 100%. We register the domain in your personal or CAC company name and hand over all administrative logins upon completion.</div>
+        <div class="faq-item open">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Where is your physical office located? Can my representative visit?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            Our sole physical headquarters is in <strong>Awka, Anambra State</strong> (Suite 304, Oganiru Tech Plaza, Aroma Junction Axis, Awka). While we serve clients across Onitsha, Asaba, Lagos, and the diaspora, anyone you send in Anambra is welcome to visit us Monday–Saturday, 8:30 AM – 5:30 PM.
+          </div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">2. How do your developers handle power (NEPA) or network issues? <span>+</span></button>
-          <div class="faq-a">All our offices run on 24/7 hybrid solar-inverter systems backed by Starlink and enterprise fiber internet, guaranteeing zero missed deadlines.</div>
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>I live abroad (UK/US/Canada). How do I pay and supervise my project?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            Over 45% of our clients are Africans in the diaspora. We schedule consultations in your timezone (GMT/EST/PST), share a live staging link every 72 hours so you watch progress in real time, and accept USD, GBP, CAD, or Naira via Stripe, bank wire, or Paystack.
+          </div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">3. Can I update product prices or blog posts myself on my phone? <span>+</span></button>
-          <div class="faq-a">Yes! Every project comes with a simple mobile-friendly admin dashboard plus a 1-on-1 training session (in-person or via Zoom) for you or your staff.</div>
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Who owns the domain name and website files after completion?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <strong>You do—100%.</strong> We register your <code>.com</code> or <code>.com.ng</code> domain in your legal name/company email and hand over all hosting, admin credentials, and source assets upon completion.
+          </div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">4. What is your payment structure? <span>+</span></button>
-          <div class="faq-a">We operate a transparent 3-stage milestone plan: 50% deposit to commence design, 30% when you approve the live staging link, and 20% at final launch.</div>
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Can I update prices, properties, or products myself using my phone?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            Yes! Every dynamic website comes with an easy mobile-friendly dashboard plus short WhatsApp-ready tutorial videos showing you or your sales clerk how to upload photos and change prices in under 60 seconds.
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ========================================================================
+       SECTION 5: PHYSICAL LOCATION MAP (AWKA HEADQUARTERS ONLY)
+       ======================================================================== -->
+  <section id="location" class="location-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Verified Physical Presence</span>
+        <h2>Visit Our Engineering Headquarters in Awka</h2>
+        <p>
+          One central hub in the heart of Anambra State—strategically positioned 35 minutes from Onitsha, 50 minutes from Asaba, and connected daily to Lagos and the diaspora.
+        </p>
+      </div>
+
+      <div class="location-grid">
+        <div class="address-card">
+          <div>
+            <span style="background:rgba(217,155,38,0.2); color:var(--accent-gold); padding:4px 10px; border-radius:6px; font-size:0.76rem; font-weight:700;">OUR ONLY PHYSICAL OFFICE</span>
+            <h3 style="margin-top:12px;">Oganiru Digital HQ — Awka</h3>
+            <p style="color:var(--text-muted-light); font-size:0.9rem;">Walk in for a face-to-face project consultation, live demo, or contract signing.</p>
+
+            <ul class="address-details">
+              <li>
+                <strong>Street Address</strong>
+                Suite 304, Oganiru Tech Plaza, Enugu–Onitsha Expressway (Aroma Junction Axis), Awka, Anambra State, Nigeria.
+              </li>
+              <li>
+                <strong>Popular Local Landmarks</strong>
+                2 minutes from Aroma Junction • Opposite Anambra State Secretariat Axis • 5 minutes from UNIZIK Temp Site.
+              </li>
+              <li>
+                <strong>Direct Lines & WhatsApp</strong>
+                🇳🇬 Nigeria Desk: +234 (0) 803 000 4921<br />
+                🌍 Diaspora Desk (WhatsApp/Zoom): +234 (0) 809 000 4922
+              </li>
+              <li>
+                <strong>Office Hours (WAT)</strong>
+                Monday – Friday: 8:30 AM – 5:30 PM<br />
+                Saturday: 10:00 AM – 3:00 PM (By Appointment)
+              </li>
+            </ul>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="https://maps.google.com/?q=Aroma+Junction+Awka+Anambra+Nigeria" target="_blank" rel="noopener" class="btn btn-gold" style="flex:1;">Open in Google Maps ↗</a>
+            <button class="btn btn-outline" style="flex:1;" onclick="openQuoteModal('In-Person Awka Office Visit')">Book Office Visit</button>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE GOOGLE MAP PINNED TO AWKA, ANAMBRA STATE -->
+        <div class="map-frame-wrap">
+          <iframe
+            title="Oganiru Digital Physical Location in Awka, Anambra State"
+            src="https://www.google.com/maps?q=Aroma+Junction,+Awka,+Anambra,+Nigeria&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       BOLD FINAL CONVERSION BANNER
+       ======================================================================== -->
+  <div class="final-cta">
+    <div class="container">
+      <h2>Ready to Build a Website That Commands Respect Everywhere?</h2>
+      <p>
+        From Onitsha Main Market and Asaba GRA to Lekki, London, and Houston—let’s turn your business into a trusted digital powerhouse.
+      </p>
+      <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
+        <button class="btn btn-gold" onclick="openQuoteModal('New Website Project')">Start Your Project Today</button>
+        <a href="https://wa.me/2348030004921?text=Hello%20Oganiru%20Digital%20Awka,%20I%20saw%20your%208%20sample%20websites%20and%20want%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="btn btn-outline">💬 Chat on WhatsApp Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-col">
-          <a href="#" class="logo" style="margin-bottom:12px;">Naija<span>Build</span>.ng</a>
-          <p style="font-size:0.88rem; opacity:0.85;">Engineering high-converting websites, e-commerce stores, and custom portals for ambitious enterprises in Awka, Onitsha, Asaba, and Lagos.</p>
+        <div>
+          <h4>Oganiru Digital Ltd (RC-7482910)</h4>
+          <p>Web engineering, e-commerce, and custom software agency headquartered in Awka, serving businesses across Anambra, Delta, Lagos, and the global African diaspora.</p>
+          <p style="margin-top:10px; color:var(--accent-gold);"><strong>Accepted Payments:</strong> Paystack • Flutterwave • Bank Transfer • USSD • Stripe • International Wire</p>
         </div>
-        <div class="footer-col">
-          <h4>Regional Hubs</h4>
+        <div>
+          <h4>8 Sample Solutions</h4>
           <ul>
-            <li><a href="#locations">Web Design in Awka</a></li>
-            <li><a href="#locations">E-Commerce in Onitsha</a></li>
-            <li><a href="#locations">Hospitality Sites in Asaba</a></li>
-            <li><a href="#locations">Enterprise Tech in Lagos</a></li>
+            <li><a href="#samples">Wholesale & Import-Export</a></li>
+            <li><a href="#samples">Diaspora Real Estate</a></li>
+            <li><a href="#samples">Fintech & Escrow</a></li>
+            <li><a href="#samples">Hotels & Event Venues</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4>Client Tools</h4>
+        <div>
+          <h4>More Blueprints</h4>
           <ul>
-            <li><a href="#samples">8 Industry Samples</a></li>
-            <li><a href="#estimator">Naira Cost Calculator</a></li>
-            <li><a href="#estimator">.NG Domain Search</a></li>
-            <li><a href="#" onclick="openCallbackModal()">Referral Partner Program (10%)</a></li>
+            <li><a href="#samples">Hospitals & Diagnostics</a></li>
+            <li><a href="#samples">Private Schools & CBT</a></li>
+            <li><a href="#samples">Logistics & Waybill</a></li>
+            <li><a href="#samples">Agro-Export Platforms</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4>Legal & Compliance</h4>
+        <div>
+          <h4>Awka Headquarters</h4>
           <ul>
-            <li>CAC RC: 1948271</li>
-            <li>NDPR Data Protection Compliant</li>
-            <li>Terms of Service & SLA</li>
-            <li>Client Milestone Portal</li>
+            <li>Suite 304, Oganiru Tech Plaza, Aroma Axis, Awka, Anambra</li>
+            <li>hello@oganirudigital.ng</li>
+            <li>+234 (0) 803 000 4921</li>
           </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <span>© 2026 NaijaBuild Digital Technologies Ltd. All rights reserved.</span>
-        <span>Built for Speed • Powered by Solar & Fiber</span>
+        <span>© <span id="yearNow"></span> Oganiru Digital Ltd. All Rights Reserved. NDPR Compliant.</span>
+        <span>Engineered with pride in Awka, Anambra State 🇳🇬</span>
       </div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
-  <a class="whatsapp-float" href="https://wa.me/2348000000000?text=Hello%20NaijaBuild%2C%20I%20saw%20your%208%20sample%20websites%20and%20want%20to%20discuss%20a%20project." target="_blank">
+  <!-- FLOATING WHATSAPP WIDGET -->
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/2348030004921?text=Hello%20Oganiru%20Digital%20Awka,%20I%20visited%20your%20homepage%20and%20would%20like%20a%20website%20quote."
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat with us on WhatsApp">
     💬 Chat on WhatsApp
   </a>
 
-  <!-- Callback / Sample Preview Modal -->
-  <div id="actionModal" class="modal-backdrop" onclick="if(event.target===this) closeModal()">
+  <!-- INTERACTIVE MODAL FOR SAMPLE PREVIEW & QUOTE REQUESTS -->
+  <div class="modal-backdrop" id="actionModal" onclick="closeModalOnOutside(event)">
     <div class="modal-card">
-      <button class="modal-close" onclick="closeModal()">✕</button>
-      <div id="modalContent"></div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close Modal">&times;</button>
+      <div id="modalBody"></div>
     </div>
   </div>
 
+  <!-- ========================================================================
+       VANILLA JAVASCRIPT (Currency, Clock, Estimator, Sample Previews, Forms)
+       ======================================================================== -->
   <script>
-    /* ================= 1. DATA FOR THE 8 SAMPLE WEBSITES ================= */
-    const samplesData = [
+    // 1. Live West Africa Time (WAT) Clock & Current Year
+    function updateClock() {
+      const now = new Date();
+      const options = { timeZone: 'Africa/Lagos', hour: '2-digit', minute: '2-digit', hour12: true };
+      document.getElementById('watClock').textContent = new Intl.DateTimeFormat('en-NG', options).format(now);
+    }
+    updateClock();
+    setInterval(updateClock, 30000);
+    document.getElementById('yearNow').textContent = new Date().getFullYear();
+
+    // 2. Mobile Navigation Toggle
+    function toggleMobileMenu() {
+      document.getElementById('navMenu').classList.toggle('show');
+    }
+
+    // 3. Multi-Currency Switcher (NGN, USD, GBP, EUR)
+    const currencyRates = {
+      NGN: { symbol: '₦', rate: 1 },
+      USD: { symbol: '$', rate: 1 / 1550 },
+      GBP: { symbol: '£', rate: 1 / 1980 },
+      EUR: { symbol: '€', rate: 1 / 1680 }
+    };
+
+    function formatMoney(ngnAmount, currencyCode) {
+      const cfg = currencyRates[currencyCode];
+      const converted = ngnAmount * cfg.rate;
+      if (currencyCode === 'NGN') {
+        return cfg.symbol + Math.round(converted).toLocaleString('en-US');
+      }
+      return cfg.symbol + Math.round(converted).toLocaleString('en-US');
+    }
+
+    document.getElementById('currencySwitcher').addEventListener('change', function () {
+      const code = this.value;
+      document.querySelectorAll('.price-amount').forEach(el => {
+        const baseNgn = Number(el.getAttribute('data-ngn'));
+        const suffix = el.textContent.includes('+') ? '+' : '';
+        el.textContent = formatMoney(baseNgn, code) + suffix;
+      });
+      calculateEstimate();
+    });
+
+    // 4. Interactive Project Cost Estimator
+    function calculateEstimate() {
+      let totalNgn = 250000; // Base 5-page website
+      document.querySelectorAll('.est-addon:checked').forEach(cb => {
+        totalNgn += Number(cb.getAttribute('data-ngn'));
+      });
+      const code = document.getElementById('currencySwitcher').value;
+      document.getElementById('estTotalDisplay').textContent = formatMoney(totalNgn, code);
+    }
+
+    // 5. Instant Domain Checker Simulation
+    function checkDomain() {
+      const input = document.getElementById('domainInput').value.trim().toLowerCase();
+      const resultEl = document.getElementById('domainResult');
+      if (!input) {
+        resultEl.style.color = '#fbbf24';
+        resultEl.textContent = '⚠️ Please enter a business or domain name first.';
+        return;
+      }
+      const cleanDomain = input.includes('.') ? input : input.replace(/[^a-z0-9-]/g, '') + '.com.ng';
+      resultEl.style.color = '#4ade80';
+      resultEl.innerHTML = `✅ Great news! <strong>${cleanDomain}</strong> is available. <a href="#pricing" style="color:#d99b26; text-decoration:underline;">Reserve it with your build →</a>`;
+    }
+
+    // 6. Filter the 8 Sample Cards
+    function filterSamples(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.sample-card').forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 7. Sample Website Blueprint Data for Live Interactive Preview Modal
+    const sampleBlueprints = [
       {
-        id: 1,
-        category: "commerce",
-        title: "Wholesale & Import/Export Store",
-        cities: "Onitsha Main Market & Lagos",
-        hook: "Move your warehouse online—bulk tier pricing, container tracking, and instant invoice generation.",
-        gradient: "linear-gradient(135deg, #064e3b, #059669)",
-        uiBadge: "📦 Bulk Cart + Paystack Transfer",
-        features: ["Carton & unit wholesale pricing", "Automated PDF proforma invoices", "WhatsApp order confirmation"]
+        title: 'Sample #01: Onitsha & Trade Fair Wholesale E-Commerce Hub',
+        audience: 'Importers, Plaza Merchants, Building Material & Electronics Distributors',
+        highlights: [
+          'Minimum Order Quantity (MOQ) & carton/dozen tiered wholesale pricing',
+          'Automated pro-forma invoice generator in Naira (₦), USD ($), and RMB (¥)',
+          'One-click WhatsApp cart checkout for fast negotiation with sales reps',
+          'Waybill dispatch tracker for interstate deliveries out of Onitsha & Lagos'
+        ],
+        turnaround: '10–14 Working Days'
       },
       {
-        id: 2,
-        category: "realestate",
-        title: "Real Estate & Estate Development",
-        cities: "Awka, Asaba & Lekki Lagos",
-        hook: "Sell plots faster with interactive estate layouts, virtual inspections, and installment calculators.",
-        gradient: "linear-gradient(135deg, #78350f, #d97706)",
-        uiBadge: "🏘️ Interactive Plot Allocation Map",
-        features: ["Available vs. Sold plot map", "6/12-month payment plan calculator", "Instant inspection booking"]
+        title: 'Sample #02: Awka & Asaba Diaspora Luxury Real Estate Portal',
+        audience: 'Property Developers, Estate Surveyors & Diaspora Housing Investors',
+        highlights: [
+          'Interactive estate plot layout showing Sold vs. Available plots in real time',
+          'Downloadable C-of-O, Registered Survey, and Allocation verification badges',
+          'Embedded 4K drone inspection videos for clients in the UK, US, and Canada',
+          '6-month to 24-month installment payment calculator in NGN & USD'
+        ],
+        turnaround: '10–14 Working Days'
       },
       {
-        id: 3,
-        category: "hospitality",
-        title: "Hotels, Lounges & Event Centers",
-        cities: "Asaba & Awka Hospitality",
-        hook: "Fill your rooms and event halls with direct booking engines and zero third-party commission fees.",
-        gradient: "linear-gradient(135deg, #1e1b4b, #4338ca)",
-        uiBadge: "🛎️ Direct Room & Hall Reservation",
-        features: ["Real-time room availability calendar", "Paystack & card deposit checkout", "Event hall capacity & menu gallery"]
+        title: 'Sample #03: Cross-Border Fintech & Project Escrow Web App',
+        audience: 'Remittance Startups, BDC Operators & Diaspora Project Managers',
+        highlights: [
+          'Live NGN / USD / GBP / CAD exchange rate ticker & fee calculator',
+          'Milestone escrow wallet protecting diaspora senders and local contractors',
+          'Two-factor authentication (2FA), NDPR compliance, and encrypted receipts',
+          'Automated Paystack, Flutterwave, and Stripe webhook integrations'
+        ],
+        turnaround: '3–5 Weeks'
       },
       {
-        id: 4,
-        category: "hospitality",
-        title: "Hospitals, Clinics & Diagnostics",
-        cities: "Awka, Onitsha & Asaba",
-        hook: "Streamline patient appointments, HMO verifications, and secure lab result downloads.",
-        gradient: "linear-gradient(135deg, #0f172a, #0284c7)",
-        uiBadge: "🩺 Patient & HMO Booking Portal",
-        features: ["Specialist doctor schedules", "HMO provider directory", "Private lab result lookup"]
+        title: 'Sample #04: Executive Hotel, Lounge & Event Center Portal',
+        audience: 'Hotels, Resorts, Event Halls & Lounges in Awka, Asaba & Lagos',
+        highlights: [
+          'Direct room reservation engine with instant Paystack/card confirmation',
+          '360-degree virtual tour of banquet halls for December weddings & summits',
+          'Live date-availability calendar to prevent double-booking',
+          'VIP table reservation & airport/Asaba-airport pickup request form'
+        ],
+        turnaround: '10–12 Working Days'
       },
       {
-        id: 5,
-        category: "commerce",
-        title: "Logistics, Haulage & Dispatch",
-        cities: "Onitsha, Asaba & Lagos Routes",
-        hook: "Real-time waybill tracking and automated inter-state delivery quotes across all 36 states.",
-        gradient: "linear-gradient(135deg, #3f2e3e, #9f1239)",
-        uiBadge: "🚚 Live Waybill & Park Tracker",
-        features: ["Instant waybill status lookup", "Weight & state rate calculator", "Driver & fleet dispatch portal"]
+        title: 'Sample #05: Specialist Hospital & Diaspora Family Care Portal',
+        audience: 'Hospitals, Diagnostic Labs, Eye/Dental Clinics & HMO Providers',
+        highlights: [
+          'Diaspora Family Health Packages: pay abroad for parents’ checkups in Nigeria',
+          'Secure patient login to download lab & scan PDFs without queuing',
+          'Doctor specialty directory & instant WhatsApp/telemedicine booking',
+          'HMO partner verification checker'
+        ],
+        turnaround: '12–16 Working Days'
       },
       {
-        id: 6,
-        category: "corporate",
-        title: "Fintech, Microfinance & Cooperatives",
-        cities: "Lagos & Onitsha Commercial",
-        hook: "Bank-grade SSL security, loan repayment calculators, and seamless digital KYC onboarding.",
-        gradient: "linear-gradient(135deg, #06281e, #15803d)",
-        uiBadge: "💳 Loan & Savings Calculator",
-        features: ["Interactive loan & interest slider", "BVN/NIN onboarding integration", "CBN/NDIC trust badges"]
+        title: 'Sample #06: Private Academy & International School Portal',
+        audience: 'Nursery, Primary, Secondary & Tertiary Institutions',
+        highlights: [
+          'Online student admission application & entrance exam slip generator',
+          'Termly PIN/scratch-card result checker with printable report sheets',
+          'Online school fees & PTA levy payment via Paystack/bank transfer',
+          'Photo gallery, school calendar, and parent announcement board'
+        ],
+        turnaround: '12–16 Working Days'
       },
       {
-        id: 7,
-        category: "corporate",
-        title: "Private Schools & Academies",
-        cities: "Awka, Asaba & Lagos",
-        hook: "Digital entrance forms, parent result-checking portals, and automated school fee payments.",
-        gradient: "linear-gradient(135deg, #4c1d95, #7c3aed)",
-        uiBadge: "🎓 Scratch-Card / Pin Result Portal",
-        features: ["Online admission form & payment", "Termly result checker portal", "School calendar & PTA news"]
+        title: 'Sample #07: Interstate Haulage, Dispatch & Cargo Tracker',
+        audience: 'Logistics Fleets, Courier Companies & Clearing/Forwarding Agents',
+        highlights: [
+          'Public Waybill Tracking bar on homepage (Onitsha → Lagos → Abuja → Port Harcourt)',
+          'Instant volumetric & weight-based shipping rate calculator',
+          'Merchant bulk-pickup request portal & proof-of-delivery upload',
+          'Fleet capability showcase for corporate haulage contracts'
+        ],
+        turnaround: '10–14 Working Days'
       },
       {
-        id: 8,
-        category: "realestate",
-        title: "Construction, Engineering & Solar",
-        cities: "Awka, Asaba & Lagos",
-        hook: "Showcase completed projects, solar load calculators, and instant Request-for-Quote (RFQ) forms.",
-        gradient: "linear-gradient(135deg, #1f2937, #b45309)",
-        uiBadge: "☀️ Solar Load & RFQ Estimator",
-        features: ["Appliance wattage & inverter sizer", "Completed project portfolio gallery", "Downloadable CAC & corporate profile"]
+        title: 'Sample #08: Diaspora Agro-Processing & Export Platform',
+        audience: 'Palm Oil, Cashew, Cassava & Packaged African Food Exporters',
+        highlights: [
+          'International buyer portal with export grade specs & NEPC/NAFDAC badges',
+          'Diaspora farm co-investment tracker with quarterly harvest updates',
+          'Container load & FOB/CIF quote request calculator',
+          'Distributor locator across Nigeria, UK, US, and Europe'
+        ],
+        turnaround: '10–14 Working Days'
       }
     ];
 
-    /* ================= 2. MULTI-CITY OFFICE DATA ================= */
-    const officeLocations = {
-      awka: {
-        title: "Awka Head Office (Anambra)",
-        address: "Suite 204, Millennium Plaza, Enugu-Onitsha Expressway, Awka, Anambra State",
-        landmark: "2 minutes drive after Aroma Junction heading towards Amawbia Flyover, directly opposite Zenith Bank.",
-        phone: "+234 (0) 803 555 0191",
-        mapUrl: "https://www.openstreetmap.org/export/embed.html?bbox=7.0550%2C6.2050%2C7.0850%2C6.2280&layer=mapnik&marker=6.2165%2C7.0700"
-      },
-      onitsha: {
-        title: "Onitsha Commercial Hub (Anambra)",
-        address: "3rd Floor, Heritage Commerce House, New Market Road, Onitsha, Anambra State",
-        landmark: "5 minutes walk from DMGS Roundabout, right beside the Old Market access road.",
-        phone: "+234 (0) 803 555 0192",
-        mapUrl: "https://www.openstreetmap.org/export/embed.html?bbox=6.7700%2C6.1350%2C6.8000%2C6.1600&layer=mapnik&marker=6.1480%2C6.7850"
-      },
-      asaba: {
-        title: "Asaba Regional Desk (Delta)",
-        address: "No. 48 Nnebisi Road, Opposite Arcade Complex, Asaba, Delta State",
-        landmark: "Directly along Nnebisi Road between Abraka Market junction and Interbau Roundabout.",
-        phone: "+234 (0) 803 555 0193",
-        mapUrl: "https://www.openstreetmap.org/export/embed.html?bbox=6.7100%2C6.1850%2C6.7450%2C6.2100&layer=mapnik&marker=6.1980%2C6.7280"
-      },
-      lagos: {
-        title: "Lagos Enterprise Office (Lekki)",
-        address: "Plot 14, Admiralty Way, Lekki Phase 1, Lagos State",
-        landmark: "3 minutes after Lekki-Ikoyi Link Bridge roundabout, adjacent to Ebeano Supermarket.",
-        phone: "+234 (0) 803 555 0194",
-        mapUrl: "https://www.openstreetmap.org/export/embed.html?bbox=3.4550%2C6.4350%2C3.4850%2C6.4580&layer=mapnik&marker=6.4470%2C3.4700"
-      }
-    };
-
-    /* ================= 3. RENDER & FILTER 8 SAMPLE CARDS ================= */
-    function renderSamples(filter = "all") {
-      const grid = document.getElementById("samplesGrid");
-      const filtered = filter === "all" ? samplesData : samplesData.filter(s => s.category === filter);
-
-      grid.innerHTML = filtered.map(sample => `
-        <div class="sample-card">
-          <div class="sample-preview" style="background: ${sample.gradient}">
-            <span class="sample-city-tag">📍 ${sample.cities}</span>
-            <div class="sample-ui-pill">${sample.uiBadge}</div>
-          </div>
-          <div class="sample-body">
-            <h3>${sample.id}. ${sample.title}</h3>
-            <p>${sample.hook}</p>
-            <div class="sample-actions">
-              <button class="btn-sm btn-demo" onclick="openSamplePreview(${sample.id})">Live Preview</button>
-              <button class="btn-sm btn-quote" onclick="selectSampleForQuote('${sample.title}')">Build Like This</button>
-            </div>
-          </div>
+    function openSamplePreview(index) {
+      const item = sampleBlueprints[index];
+      const listHtml = item.highlights.map(h => `<li style="margin-bottom:8px;">✔ ${h}</li>`).join('');
+      document.getElementById('modalBody').innerHTML = `
+        <span style="background:rgba(217,155,38,0.18); color:#9a6700; font-weight:700; font-size:0.76rem; padding:4px 10px; border-radius:6px;">BLUEPRINT SPECIFICATION</span>
+        <h3 style="color:var(--bg-primary); margin:10px 0 6px; font-size:1.3rem;">${item.title}</h3>
+        <p style="font-size:0.88rem; color:#475569; margin-bottom:14px;"><strong>Ideal For:</strong> ${item.audience}</p>
+        <ul style="list-style:none; font-size:0.92rem; color:#1e293b; margin-bottom:16px; background:#f8fafc; padding:14px; border-radius:8px;">
+          ${listHtml}
+        </ul>
+        <p style="font-size:0.86rem; margin-bottom:16px;"><strong>Estimated Build Time:</strong> ${item.turnaround} • <strong>Inspected From:</strong> Awka HQ or Live Zoom</p>
+        <div style="display:flex; gap:10px;">
+          <button class="btn btn-gold" style="flex:1;" onclick="openQuoteModal('${item.title}')">Request Quote for This Blueprint</button>
+          <button class="btn btn-dark" onclick="closeModal()">Close</button>
         </div>
-      `).join("");
-    }
-
-    function filterSamples(category, btn) {
-      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      renderSamples(category);
-    }
-
-    /* ================= 4. MULTI-CITY MAP SWITCHER ================= */
-    function selectCity(cityKey, btn) {
-      document.querySelectorAll(".city-tab").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const data = officeLocations[cityKey];
-      document.getElementById("officeTitle").textContent = data.title;
-      document.getElementById("officeAddress").textContent = data.address;
-      document.getElementById("officeLandmark").textContent = data.landmark;
-      document.getElementById("officePhone").textContent = data.phone;
-      document.getElementById("cityMapFrame").src = data.mapUrl;
-    }
-
-    /* ================= 5. DOMAIN CHECKER & NAIRA CALCULATOR ================= */
-    function checkDomain() {
-      const raw = document.getElementById("domainInput").value.trim().toLowerCase();
-      const resBox = document.getElementById("domainResult");
-      if (!raw) {
-        alert("Please type a business name or domain (e.g. zenithmotors.com.ng)");
-        return;
-      }
-      const cleanDomain = raw.includes(".") ? raw : `${raw.replace(/\s+/g, "")}.com.ng`;
-      resBox.style.display = "block";
-      resBox.style.background = "#ecfdf5";
-      resBox.style.color = "#065f46";
-      resBox.innerHTML = `✅ Good news! <strong>${cleanDomain}</strong> is available for registration. <a href="#estimator" onclick="openCallbackModal()" style="text-decoration:underline; margin-left:6px;">Reserve it now →</a>`;
-    }
-
-    function calculateQuote() {
-      let total = parseInt(document.getElementById("projectType").value, 10);
-      document.querySelectorAll(".calc-options input:checked").forEach(cb => {
-        total += parseInt(cb.value, 10);
-      });
-      document.getElementById("totalQuote").textContent = "₦" + total.toLocaleString("en-NG");
-    }
-
-    function selectSampleForQuote(sampleTitle) {
-      openCallbackModal(`Requesting Build: ${sampleTitle}`);
-    }
-
-    /* ================= 6. MODALS, FAQ, DARK MODE & DATA-SAVER ================= */
-    function openSamplePreview(id) {
-      const s = samplesData.find(item => item.id === id);
-      const modal = document.getElementById("actionModal");
-      document.getElementById("modalContent").innerHTML = `
-        <span class="badge">Sample Blueprint #${s.id}</span>
-        <h3 style="margin-bottom:8px;">${s.title}</h3>
-        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:16px;">${s.hook}</p>
-        <div style="background:var(--bg-primary); padding:16px; border-radius:10px; margin-bottom:18px;">
-          <strong style="display:block; margin-bottom:8px; font-size:0.88rem;">Key Features Included:</strong>
-          <ul style="padding-left:18px; font-size:0.88rem; display:flex; flex-direction:column; gap:6px;">
-            ${s.features.map(f => `<li>${f}</li>`).join("")}
-          </ul>
-        </div>
-        <button class="btn-primary" style="width:100%; justify-content:center;" onclick="selectSampleForQuote('${s.title}')">Request This Exact Design →</button>
       `;
-      modal.classList.add("show");
+      document.getElementById('actionModal').classList.add('active');
     }
 
-    function openCallbackModal(presetSubject = "Request a 15-Minute Strategy Callback") {
-      const modal = document.getElementById("actionModal");
-      document.getElementById("modalContent").innerHTML = `
-        <span class="badge">Fast Response</span>
-        <h3 style="margin-bottom:6px;">${presetSubject}</h3>
-        <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:16px;">Enter your details and our regional lead in Awka, Onitsha, Asaba, or Lagos will call you within 15 minutes.</p>
-        <form onsubmit="submitLead(event)" style="display:flex; flex-direction:column; gap:12px;">
-          <input type="text" class="input-field" placeholder="Your Full Name / Business Name" required />
-          <input type="tel" class="input-field" placeholder="Phone / WhatsApp Number (e.g. 0803...)" required />
-          <select class="select-field">
-            <option>Location: Awka</option>
-            <option>Location: Onitsha</option>
-            <option>Location: Asaba</option>
-            <option>Location: Lagos</option>
-          </select>
-          <button type="submit" class="btn-primary" style="justify-content:center;">Confirm Request</button>
+    function openQuoteModal(projectName) {
+      document.getElementById('modalBody').innerHTML = `
+        <span style="background:rgba(217,155,38,0.18); color:#9a6700; font-weight:700; font-size:0.76rem; padding:4px 10px; border-radius:6px;">24-HOUR EXPRESS PROPOSAL</span>
+        <h3 style="color:var(--bg-primary); margin:10px 0 6px;">Start: ${projectName}</h3>
+        <p style="font-size:0.88rem; color:#475569; margin-bottom:14px;">Our Awka engineering desk will send a tailored cost & timeline breakdown via WhatsApp or Email.</p>
+        <form onsubmit="submitQuoteForm(event, '${projectName.replace(/'/g, "\\'")}')">
+          <div style="display:grid; gap:10px; margin-bottom:14px;">
+            <input type="text" id="qName" placeholder="Your Name / Company Name" required style="padding:11px; border:1px solid #cbd5e1; border-radius:8px;" />
+            <input type="tel" id="qPhone" placeholder="WhatsApp Number (e.g. +234... or +44... or +1...)" required style="padding:11px; border:1px solid #cbd5e1; border-radius:8px;" />
+            <select id="qCity" style="padding:11px; border:1px solid #cbd5e1; border-radius:8px;">
+              <option value="Awka">My Location: Awka / Anambra</option>
+              <option value="Onitsha">My Location: Onitsha / Nnewi</option>
+              <option value="Asaba">My Location: Asaba / Delta</option>
+              <option value="Lagos">My Location: Lagos</option>
+              <option value="Diaspora">My Location: Diaspora (UK / US / Canada / EU)</option>
+            </select>
+            <textarea id="qNotes" rows="3" placeholder="Briefly describe what you want your website to do..." style="padding:11px; border:1px solid #cbd5e1; border-radius:8px;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%;">Send Proposal Request →</button>
         </form>
       `;
-      modal.classList.add("show");
+      document.getElementById('actionModal').classList.add('active');
     }
 
-    function submitLead(e) {
+    function submitQuoteForm(e, projectName) {
       e.preventDefault();
-      document.getElementById("modalContent").innerHTML = `
-        <div style="text-align:center; padding:20px 0;">
-          <div style="font-size:2.5rem; margin-bottom:10px;">🎉</div>
-          <h3>Request Received!</h3>
-          <p style="font-size:0.92rem; color:var(--text-muted); margin:10px 0 20px;">Our regional project manager will reach out via phone/WhatsApp shortly.</p>
-          <button class="btn-primary" onclick="closeModal()">Back to Homepage</button>
+      const name = document.getElementById('qName').value;
+      const city = document.getElementById('qCity').value;
+      document.getElementById('modalBody').innerHTML = `
+        <div style="text-align:center; padding:16px 0;">
+          <div style="font-size:2.4rem; margin-bottom:8px;">✅</div>
+          <h3 style="color:var(--bg-primary); margin-bottom:8px;">Daalụ, ${name}! Request Received.</h3>
+          <p style="font-size:0.92rem; color:#475569; margin-bottom:16px;">
+            Our project lead at our <strong>Awka Headquarters</strong> has logged your inquiry for <strong>${projectName}</strong> (${city} desk) and will reach out within 2 business hours.
+          </p>
+          <button class="btn btn-gold" onclick="closeModal()">Return to Homepage</button>
         </div>
       `;
+    }
+
+    function handleCallback(e) {
+      e.preventDefault();
+      const name = document.getElementById('cbName').value;
+      const loc = document.getElementById('cbLocation').value;
+      openQuoteModal(`Callback Request (${loc} — ${name})`);
+      document.getElementById('modalBody').innerHTML = `
+        <div style="text-align:center; padding:16px 0;">
+          <div style="font-size:2.4rem; margin-bottom:8px;">📞</div>
+          <h3 style="color:var(--bg-primary); margin-bottom:8px;">Callback Scheduled for ${name}!</h3>
+          <p style="font-size:0.92rem; color:#475569; margin-bottom:16px;">
+            An engineer from our <strong>Awka office</strong> will call or WhatsApp you shortly with tailored samples for your <strong>${loc}</strong> business.
+          </p>
+          <button class="btn btn-gold" onclick="closeModal()">Done</button>
+        </div>
+      `;
+      e.target.reset();
     }
 
     function closeModal() {
-      document.getElementById("actionModal").classList.remove("show");
+      document.getElementById('actionModal').classList.remove('active');
     }
 
+    function closeModalOnOutside(e) {
+      if (e.target.id === 'actionModal') closeModal();
+    }
+
+    // 8. FAQ Accordion Toggle
     function toggleFaq(btn) {
       const item = btn.parentElement;
-      item.classList.toggle("open");
-      btn.querySelector("span").textContent = item.classList.contains("open") ? "−" : "+";
+      item.classList.toggle('open');
     }
-
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark-mode");
-      const btn = document.getElementById("themeBtn");
-      btn.textContent = document.body.classList.contains("dark-mode") ? "☀️ Light Mode" : "🌙 Dark Mode";
-    }
-
-    function toggleDataSaver() {
-      document.body.classList.toggle("data-saver");
-      const btn = document.getElementById("dataSaverBtn");
-      const active = document.body.classList.contains("data-saver");
-      btn.classList.toggle("active", active);
-      btn.textContent = active ? "⚡ Data-Saver: ON" : "⚡ Data-Saver: OFF";
-    }
-
-    // Initialize default 8 sample cards on page load
-    renderSamples();
   </script>
 </body>
 </html>
