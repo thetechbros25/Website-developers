@@ -445,6 +445,91 @@
       color: #6b7280;
     }
 
+    /* CUSTOMER REVIEWS / TESTIMONIALS SECTION */
+    .reviews-section {
+      background-color: #e5e7eb;
+      border-top: 1px solid #d1d5db;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .review-card {
+      background-color: #ffffff;
+      padding: 32px 26px;
+      border-radius: var(--radius);
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .review-stars {
+      color: var(--accent-orange);
+      font-size: 0.92rem;
+      display: flex;
+      gap: 3px;
+    }
+
+    .review-quote-icon {
+      color: #e5e7eb;
+      font-size: 1.8rem;
+    }
+
+    .review-text {
+      font-size: 0.94rem;
+      color: #374151;
+      font-style: italic;
+      margin-bottom: 22px;
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    .reviewer-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid #f3f4f6;
+      padding-top: 16px;
+    }
+
+    .reviewer-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--bg-primary);
+      color: var(--accent-orange);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .reviewer-info h4 {
+      font-size: 0.98rem;
+      color: var(--bg-primary);
+      margin-bottom: 2px;
+    }
+
+    .reviewer-info span {
+      font-size: 0.8rem;
+      color: #6b7280;
+      display: block;
+    }
+
     /* LOCATION & MAP SECTION */
     .location-section {
       background-color: #ffffff;
@@ -572,7 +657,7 @@
       .products-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .features-grid {
+      .features-grid, .reviews-grid {
         grid-template-columns: 1fr;
       }
       .location-grid {
@@ -611,7 +696,7 @@
         display: block;
       }
       .header-actions .btn-orange {
-        display: none; /* Hide desktop CTA in header on mobile to save space, use hamburger / WhatsApp float instead */
+        display: none;
       }
       .products-grid {
         grid-template-columns: 1fr;
@@ -650,6 +735,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#products">Spare Parts Catalog</a></li>
           <li><a href="#about">Why Us</a></li>
+          <li><a href="#reviews">Testimonials</a></li>
           <li><a href="#location">Market Location & Map</a></li>
         </ul>
       </nav>
@@ -701,14 +787,14 @@
         <div class="product-card animate-on-scroll">
           <div class="product-img-wrap">
             <span class="product-tag">OEM Genuine</span>
-            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=75" alt="Heavy Duty Diesel Engine Turbocharger" loading="lazy" />
+            <img src="https://www.myteeproducts.com/media/catalog/product/cache/dd4850ad4231b6306bceadf38a0bbeed/a/i/air_brake_slack_adjuster_automatic_with_5.5_in_arm_length_collar_lock_clevis_replaces_r801004_05-570_11-399_924208_sa07902_oem_-_mytee_products_4.jpg" alt="Heavy Duty Diesel Engine Turbocharger" loading="lazy" />
           </div>
           <div class="product-body">
             <h3>Heavy-Duty Diesel Turbocharger</h3>
             <p>High-efficiency OEM turbocharger assembly engineered for Mack, Mercedes-Benz Actros, and Volvo commercial trucks.</p>
             <div class="product-footer">
               <span class="product-price">N480,000</span>
-              <a href="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=75" target="_blank" rel="noopener" class="btn btn-sm btn-orange">Inquire</a>
+              <a href="https://wa.me/2348030004921?text=I%20am%20interested%20in%20the%20Heavy-Duty%20Diesel%20Turbocharger" target="_blank" rel="noopener" class="btn btn-sm btn-orange">Inquire</a>
             </div>
           </div>
         </div>
@@ -717,7 +803,7 @@
         <div class="product-card animate-on-scroll" style="transition-delay: 0.1s;">
           <div class="product-img-wrap">
             <span class="product-tag">Heavy Duty</span>
-            <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=600&q=75" alt="Commercial Truck Air Brake Valve System" loading="lazy" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-9F6ZYlmrsp4Az04L4nQQ58sp4x-SqyxXMdEDoX09SiB8RAY6Pj6nuZ4&s=10" alt="Commercial Truck Air Brake Valve System" loading="lazy" />
           </div>
           <div class="product-body">
             <h3>Air Brake Compressor & Valve Kit</h3>
@@ -733,7 +819,7 @@
         <div class="product-card animate-on-scroll" style="transition-delay: 0.2s;">
           <div class="product-img-wrap">
             <span class="product-tag">Genuine OEM</span>
-            <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=600&q=75" alt="Truck Leaf Spring Suspension Assembly" loading="lazy" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSucTFhsbMFi5lAbL-zVo8yKi0RIqYyXkjAQNFJpMf9CRRrA5bGrUinOEQ&s=10" alt="Truck Leaf Spring Suspension Assembly" loading="lazy" />
           </div>
           <div class="product-body">
             <h3>Heavy Truck Leaf Spring Assembly</h3>
@@ -749,7 +835,7 @@
         <div class="product-card animate-on-scroll" style="transition-delay: 0.3s;">
           <div class="product-img-wrap">
             <span class="product-tag">Precision OEM</span>
-            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=75" alt="Commercial Truck Fuel Injection Pump" loading="lazy" />
+            <img src="https://cdn11.bigcommerce.com/s-5s8spsrbr9/images/stencil/340x340/products/47691//121196//01-050910_1__33499.1767780784.220.290.jpg" alt="Commercial Truck Fuel Injection Pump" loading="lazy" />
           </div>
           <div class="product-body">
             <h3>High-Pressure Fuel Injection Pump</h3>
@@ -761,11 +847,11 @@
           </div>
         </div>
 
-        <!-- Product 5 (Fixed Image Link for Clutch Cover & Disc Kit) -->
+        <!-- Product 5 -->
         <div class="product-card animate-on-scroll">
           <div class="product-img-wrap">
             <span class="product-tag">Heavy Duty</span>
-            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=75" alt="Truck Clutch Cover and Disc Kit" loading="lazy" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ5lKSsWtTVzSBuljDn86BZ6CF-cJ0ydAb1hCi-XkSnharB-5al0tr_IwM&s=10" alt="Truck Clutch Cover and Disc Kit" loading="lazy" />
           </div>
           <div class="product-body">
             <h3>Heavy-Duty Clutch Cover & Disc Kit</h3>
@@ -781,7 +867,7 @@
         <div class="product-card animate-on-scroll" style="transition-delay: 0.1s;">
           <div class="product-img-wrap">
             <span class="product-tag">OEM Genuine</span>
-            <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=600&q=75" alt="Truck Radiator and Cooling Fan Assembly" loading="lazy" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCiIaXQI4Y8MhhvIeRb76NodDXW4VYefy9bDi3JUBH4gdVRvLfwBqOZyl5&s=10" alt="Truck Radiator and Cooling Fan Assembly" loading="lazy" />
           </div>
           <div class="product-body">
             <h3>Heavy Truck Radiator & Cooling Core</h3>
@@ -848,7 +934,7 @@
       <div class="section-header animate-on-scroll">
         <span style="color: var(--accent-orange); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Our Advantage</span>
         <h2>Why Transporters & Mechanics Trust Our Nkpor Warehouse</h2>
-        <p>We are about authenticity, competitive market pricing, and expert technical guidance for all heavy-duty truck brands.</p>
+        <p>We pride ourselves on authenticity, competitive market pricing, and expert technical guidance for all heavy-duty truck brands.</p>
       </div>
 
       <div class="features-grid">
@@ -874,6 +960,97 @@
           </div>
           <h3>Interstate Waybill & Delivery</h3>
           <p>Quick and secure waybill dispatch services to Lagos, Abuja, Port Harcourt, Kano, and all major commercial terminals across Nigeria.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER REVIEWS / TESTIMONIALS SECTION -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span style="color: var(--accent-orange); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Verified Client Feedback</span>
+        <h2>What Fleet Owners & Mechanics Say About Us</h2>
+        <p>Trusted by interstate haulage operators, diesel mechanics, and spare parts dealers across Anambra and nationwide.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card animate-on-scroll">
+          <div>
+            <div class="review-header">
+              <div class="review-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <i class="fa-solid fa-quote-right review-quote-icon"></i>
+            </div>
+            <p class="review-text">
+              "Whenever any of our Mercedes Actros trailers has an urgent breakdown on the Onitsha–Lagos expressway, Buzzor Sonic Auto Ventures is our first call. Their OEM turbochargers and brake valves never fail."
+            </p>
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">CO</div>
+            <div class="reviewer-info">
+              <h4>Chief Chinedu Okafor</h4>
+              <span>Managing Director, Okafor Interstate Haulage (Onitsha)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card animate-on-scroll" style="transition-delay: 0.15s;">
+          <div>
+            <div class="review-header">
+              <div class="review-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <i class="fa-solid fa-quote-right review-quote-icon"></i>
+            </div>
+            <p class="review-text">
+              "As a heavy-duty diesel mechanic in Asaba, finding genuine Mack and Volvo fuel injection pumps without fake imitations is critical. Their shop in Nkpor New Parts Market always delivers authentic components."
+            </p>
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">EN</div>
+            <div class="reviewer-info">
+              <h4>Engr. Emmanuel Nwosu</h4>
+              <span>Lead Diesel Specialist, Delta Heavy Fleet Workshop (Asaba)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card animate-on-scroll" style="transition-delay: 0.3s;">
+          <div>
+            <div class="review-header">
+              <div class="review-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <i class="fa-solid fa-quote-right review-quote-icon"></i>
+            </div>
+            <p class="review-text">
+              "We order heavy-duty clutch kits and leaf springs from their Nkpor warehouse via waybill to Abuja every month. Same-day dispatch, fair wholesale pricing, and zero stories."
+            </p>
+          </div>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">AM</div>
+            <div class="reviewer-info">
+              <h4>Alhaji Musa Abdullahi</h4>
+              <span>Fleet Operations Manager, Northern Cargo Logistics (Abuja)</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -928,7 +1105,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <h3>Nkpor Heavy Duty Truck Parts</h3>
+          <h3>Buzzor Sonic Auto Ventures</h3>
           <p>
             Specialized supplier of genuine and OEM components for heavy-duty vehicles and commercial trucks. Located in the New Auto Spare Parts Market, Nkpor, Onitsha, Anambra State.
           </p>
@@ -941,6 +1118,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#products">Spare Parts Catalog</a></li>
             <li><a href="#about">Why Choose Us</a></li>
+            <li><a href="#reviews">Customer Testimonials</a></li>
             <li><a href="#location">Market Location & Map</a></li>
           </ul>
         </div>
@@ -982,7 +1160,7 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target); // Animate only once when scrolling down for the first time
+            observer.unobserve(entry.target);
           }
         });
       }, {
