@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Specialized truck and automotive spare parts supplier located in the New Auto Spare Parts Market area of Nkpor, near Onitsha, Anambra State. Genuine and OEM components for heavy-duty vehicles." />
+  <title>Buzzor Sonic Auto Ventures | New Auto Spare Parts Market, Nkpor, Onitsha</title>
+  
+  <!-- FontAwesome for standard icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --bg-primary: #111827;
+      --bg-secondary: #1f2937;
+      --accent-orange: #f97316;
+      --accent-orange-hover: #ea580c;
+      --text-light: #f9fafb;
+      --text-muted: #9ca3af;
+      --text-dark: #111827;
+      --border-color: #374151;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: #f3f4f6;
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP BAR */
+    .top-bar {
+      background-color: #0b0f19;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .top-bar-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .top-bar-info span i {
+      color: var(--accent-orange);
+      margin-right: 5px;
+    }
+
+    /* HEADER */
+    header {
+      background-color: var(--bg-primary);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--accent-orange);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      gap: 15px;
+    }
+
+    .logo {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .logo i {
+      color: var(--accent-orange);
+      font-size: 1.4rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-orange);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-orange {
+      background-color: var(--accent-orange);
+      color: #ffffff;
+    }
+
+    .btn-orange:hover {
+      background-color: var(--accent-orange-hover);
+      transform: translateY(-2px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-color);
+      color: var(--text-light);
+      font-size: 1.2rem;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* HERO SECTION WITH EXPLICIT BACKGROUND IMAGE & GRADIENT OVERLAY */
+    .hero {
+      position: relative;
+      background-image: linear-gradient(rgba(17, 24, 39, 0.88), rgba(17, 24, 39, 0.88)), url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: var(--text-light);
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: rgba(249, 115, 22, 0.2);
+      border: 1px solid var(--accent-orange);
+      color: var(--accent-orange);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--accent-orange);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* SECTION COMMON STYLES */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      color: var(--bg-primary);
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      color: #4b5563;
+      font-size: 1.05rem;
+    }
+
+    /* SCROLL ANIMATION INITIAL STATES */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .animate-from-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .animate-from-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .is-visible {
+      opacity: 1 !important;
+      transform: translate(0, 0) !important;
+    }
+
+    /* PRODUCT GRID (8 ITEMS) */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      background-color: #ffffff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-img-wrap {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: var(--bg-primary);
+      color: var(--accent-orange);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .product-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-body h3 {
+      font-size: 1.1rem;
+      color: var(--bg-primary);
+      margin-bottom: 8px;
+    }
+
+    .product-body p {
+      font-size: 0.88rem;
+      color: #6b7280;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #f3f4f6;
+      padding-top: 14px;
+      margin-top: auto;
+    }
+
+    .product-price {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--bg-primary);
+    }
+
+    .btn-sm {
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      background-color: var(--bg-primary);
+      color: var(--text-light);
+    }
+
+    .btn-sm:hover {
+      background-color: var(--accent-orange);
+    }
+
+    /* PARALLAX SECTION */
+    .parallax-section {
+      position: relative;
+      background-image: linear-gradient(rgba(17, 24, 39, 0.88), rgba(17, 24, 39, 0.88)), url('https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=1920&q=80');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: var(--text-light);
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .parallax-content {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .parallax-content h2 {
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+
+    .parallax-content p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    /* ABOUT / WHY CHOOSE US */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .feature-box {
+      background-color: #ffffff;
+      padding: 36px 28px;
+      border-radius: var(--radius);
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background-color: rgba(249, 115, 22, 0.1);
+      color: var(--accent-orange);
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .feature-box h3 {
+      font-size: 1.2rem;
+      color: var(--bg-primary);
+      margin-bottom: 10px;
+    }
+
+    .feature-box p {
+      font-size: 0.92rem;
+      color: #6b7280;
+    }
+
+    /* LOCATION & MAP SECTION */
+    .location-section {
+      background-color: #ffffff;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    .location-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .location-info h2 {
+      font-size: 2.2rem;
+      color: var(--bg-primary);
+      margin-bottom: 14px;
+    }
+
+    .location-info p {
+      color: #4b5563;
+      margin-bottom: 24px;
+      font-size: 1.02rem;
+    }
+
+    .address-details {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .address-details li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+      font-size: 0.98rem;
+      color: #374151;
+    }
+
+    .address-details li i {
+      color: var(--accent-orange);
+      font-size: 1.1rem;
+      margin-top: 3px;
+    }
+
+    .map-container {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid #e5e7eb;
+      min-height: 400px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      border: 0;
+      display: block;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--bg-primary);
+      color: var(--text-muted);
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h3 {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-col p {
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover {
+      color: var(--accent-orange);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.85rem;
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 1024px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar-info {
+        font-size: 0.75rem;
+        gap: 10px;
+      }
+      .logo {
+        font-size: 0.98rem;
+        gap: 6px;
+      }
+      .logo i {
+        font-size: 1.2rem;
+      }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 66px;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-primary);
+        padding: 20px;
+        border-bottom: 2px solid var(--accent-orange);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      }
+      nav ul.show {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .header-actions .btn-orange {
+        display: none; /* Hide desktop CTA in header on mobile to save space, use hamburger / WhatsApp float instead */
+      }
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-location-dot"></i> New Auto Spare Parts Market, Nkpor, Onitsha</span>
+        <span><i class="fa-solid fa-phone"></i> +234 803 000 4921</span>
+      </div>
+      <div>
+        <span><i class="fa-regular fa-clock"></i> Mon-Sat: 8AM - 6PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-truck-monster"></i>
+        Buzzor Sonic Auto Ventures
+      </a>
+
+      <nav>
+        <ul id="navMenu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Spare Parts Catalog</a></li>
+          <li><a href="#about">Why Us</a></li>
+          <li><a href="#location">Market Location & Map</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/2348030004921" target="_blank" rel="noopener" class="btn btn-orange">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH EXPLICIT BACKGROUND IMAGE -->
+  <section class="hero" id="home">
+    <div class="container hero-content animate-on-scroll">
+      <div class="hero-badge">
+        <i class="fa-solid fa-shield-halved"></i> Genuine & OEM Heavy-Duty Components
+      </div>
+      <h1>Specialized Truck & Automotive <span>Spare Parts Supplier</span> in Nkpor, Onitsha</h1>
+      <p>
+        Your trusted direct source for heavy-duty truck components, engine parts, suspension systems, and OEM spares located right in the New Auto Spare Parts Market, Nkpor, Anambra State.
+      </p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-orange">
+          <i class="fa-solid fa-boxes-stacked"></i> View 8 Sample Products
+        </a>
+        <a href="#location" class="btn" style="background: rgba(255,255,255,0.15); color: #fff;">
+          <i class="fa-solid fa-map-location-dot"></i> Visit Market Office
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS SECTION (8 ITEMS) -->
+  <section id="products">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span style="color: var(--accent-orange); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Heavy Duty Catalog</span>
+        <h2>Featured Commercial Truck & OEM Spare Parts</h2>
+        <p>A sample selection of genuine heavy-duty components readily available in stock at our Nkpor market warehouse.</p>
+      </div>
+
+      <div class="products-grid">
+        
+        <!-- Product 1 -->
+        <div class="product-card animate-on-scroll">
+          <div class="product-img-wrap">
+            <span class="product-tag">OEM Genuine</span>
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=75" alt="Heavy Duty Diesel Engine Turbocharger" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3>Heavy-Duty Diesel Turbocharger</h3>
+            <p>High-efficiency OEM turbocharger assembly engineered for Mack, Mercedes-Benz Actros, and Volvo commercial trucks.</p>
+            <div class="product-footer">
+              <span class="product-price">N480,000</span>
+              <a href="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=75" target="_blank" rel="noopener" class="btn btn-sm btn-orange">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card animate-on-scroll" style="transition-delay: 0.1s;">
+          <div class="product-img-wrap">
+            <span class="product-tag">Heavy Duty</span>
+            <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=600&q=75" alt="Commercial Truck Air Brake Valve System" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3>Air Brake Compressor & Valve Kit</h3>
+            <p>Complete heavy-duty pneumatic air brake assembly ensuring maximum stopping power for interstate trailers.</p>
+            <div class="product-footer">
+              <span class="product-price">N145,000</span>
+              <a href="https://wa.me/2348030004921?text=I%20am%20interested%20in%20the%20Air%20Brake%20Compressor%20%26%20Valve%20Kit" target="_blank" rel="noopener" class="btn btn-sm btn-orange">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card animate-on-scroll" style="transition-delay: 0.2s;">
+          <div class="product-img-wrap">
+            <span class="product-tag">Genuine OEM</span>
+            <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=600&q=75" alt="Truck Leaf Spring Suspension Assembly" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3>Heavy Truck Leaf Spring Assembly</h3>
+            <p>Reinforced multi-leaf rear suspension spring designed to withstand heavy payload transit across Nigerian highways.</p>
+            <div class="product-footer">
+              <span class="product-price">N95,000</span>
+              <a href="https://wa.me/2348030004921?text=I%20am%20interested%20in%20the%20Heavy%20Truck%20Leaf%20Spring%20Assembly" target="_blank" rel="noopener" class="btn btn-sm btn-orange">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card animate-on-scroll" style="transition-delay: 0.3s;">
+          <div class="product-img-wrap">
+            <span class="product-tag">Precision OEM</span>
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=75" alt="Commercial Truck Fuel Injection Pump" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3>High-Pressure Fuel Injection Pump</h3>
+            <p>Precision-calibrated diesel fuel injection pump for optimal combustion efficiency and fuel economy in long-haul trucks.</p>
+            <div class="product-footer">
+              <span class="product-price">N350,000</span>
+              <a href="https://wa.me/2348030004921?text=I%20am%20interested%20in%20the%20High-Pressure%20Fuel%20Injection%20Pump" target="_blank" rel="noopener" class="btn btn-sm btn-orange">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 (Fixed Image Link for Clutch Cover & Disc Kit) -->
+        <div class="product-card animate-on-scroll">
+          <div class="product-img-wrap">
+            <span class="product-tag">Heavy Duty</span>
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=75" alt="Truck Clutch Cover and Disc Kit" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3>Heavy-Duty Clutch Cover & Disc Kit</h3>
+            <p>High-torque dual-plate heavy clutch assembly built for smooth gear engagement under severe commercial freight loads.</p>
+            <div class="product-footer">
+              <span class="product-price">N210,000</span>
+              <a href="https://wa.me/2348030004921?text=I%20am%20interested%20in%20the%20Heavy-Duty%20Clutch%20Cover%20%26%20Disc%20Kit" target="_blank" rel="noopener" class="btn btn-sm btn-orange">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card animate-on-scroll" style="transition-delay: 0.1s;">
+          <div class="product-img-wrap">
+            <span class="product-tag">OEM Genuine</span>
+            <img src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=600&q=75" alt="Truck Radiator and Cooling Fan Assembly" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3>Heavy Truck Radiator & Cooling Core</h3>
+            <p>All-aluminum heavy-duty core radiator designed to prevent engine overheating during long interstate trips.</p>
+            <div class="product-footer">
+              <span class="product-price">N280,000</span>
+              <a href="https://wa.me/2348030004921?text=I%20am%20interested%20in%20the%20Heavy%20Truck%20Radiator%20%26%20Cooling%20Core" target="_blank" rel="noopener" class="btn btn-sm btn-orange">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card animate-on-scroll" style="transition-delay: 0.2s;">
+          <div class="product-img-wrap">
+            <span class="product-tag">Heavy Duty</span>
+            <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=600&q=75" alt="Commercial Truck Steering Gearbox" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3>Power Steering Gearbox Assembly</h3>
+            <p>Precision hydraulic power steering steering box ensuring responsive control for heavy multi-axle trailers.</p>
+            <div class="product-footer">
+              <span class="product-price">N310,000</span>
+              <a href="https://wa.me/2348030004921?text=I%20am%20interested%20in%20the%20Power%20Steering%20Gearbox%20Assembly" target="_blank" rel="noopener" class="btn btn-sm btn-orange">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card animate-on-scroll" style="transition-delay: 0.3s;">
+          <div class="product-img-wrap">
+            <span class="product-tag">Genuine OEM</span>
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=75" alt="Truck Alternator and Starter Motor" loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3>24V Heavy Duty Truck Alternator</h3>
+            <p>High-output 24-volt commercial alternator built for continuous heavy electrical loads in articulated trucks.</p>
+            <div class="product-footer">
+              <span class="product-price">N120,000</span>
+              <a href="https://wa.me/2348030004921?text=I%20am%20interested%20in%20the%2024V%20Heavy%20Duty%20Truck%20Alternator" target="_blank" rel="noopener" class="btn btn-sm btn-orange">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PARALLAX SECTION -->
+  <section class="parallax-section">
+    <div class="container parallax-content animate-on-scroll">
+      <h2>Reliable Spare Parts for Fleet Owners & Transporters</h2>
+      <p>
+        Operating from the heart of the New Auto Spare Parts Market in Nkpor, near Onitsha, we supply genuine truck parts that minimize downtime and keep your commercial fleet moving profitably across Nigeria.
+      </p>
+      <a href="https://wa.me/2348030004921" target="_blank" rel="noopener" class="btn btn-orange">
+        <i class="fa-brands fa-whatsapp"></i> Speak With Our Parts Specialist
+      </a>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span style="color: var(--accent-orange); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Our Advantage</span>
+        <h2>Why Transporters & Mechanics Trust Our Nkpor Warehouse</h2>
+        <p>We are about authenticity, competitive market pricing, and expert technical guidance for all heavy-duty truck brands.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box animate-from-left">
+          <div class="feature-icon">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <h3>100% Genuine & OEM Parts</h3>
+          <p>We source directly from certified manufacturers, ensuring durability and precise fit for Mercedes, Mack, Volvo, MAN, and Scania trucks.</p>
+        </div>
+
+        <div class="feature-box animate-on-scroll" style="transition-delay: 0.15s;">
+          <div class="feature-icon">
+            <i class="fa-solid fa-store"></i>
+          </div>
+          <h3>Strategic Market Location</h3>
+          <p>Situated in the bustling New Auto Spare Parts Market, Nkpor, near Onitsha—making interstate dispatch and physical pickup swift and convenient.</p>
+        </div>
+
+        <div class="feature-box animate-from-right">
+          <div class="feature-icon">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h3>Interstate Waybill & Delivery</h3>
+          <p>Quick and secure waybill dispatch services to Lagos, Abuja, Port Harcourt, Kano, and all major commercial terminals across Nigeria.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION & MAP SECTION -->
+  <section class="location-section" id="location">
+    <div class="container">
+      <div class="location-grid">
+        <div class="location-info animate-from-left">
+          <span style="color: var(--accent-orange); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Visit Our Shop</span>
+          <h2>New Auto Spare Parts Market, Nkpor</h2>
+          <p>
+            Whether you are visiting our physical warehouse in Nkpor or sending your mechanic to inspect components, our doors are open six days a week.
+          </p>
+
+          <ul class="address-details">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span><strong>Market Address:</strong> New Auto Spare Parts Market, Nkpor, Near Onitsha, Anambra State, Nigeria.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span><strong>Direct Phone / WhatsApp:</strong> +234 803 000 4921</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i>
+              <span><strong>Business Hours:</strong> Monday to Saturday (8:00 AM – 6:00 PM)</span>
+            </li>
+          </ul>
+
+          <a href="https://wa.me/2348030004921?text=Hello,%20I%20would%20like%20directions%20to%20your%20shop%20in%20Nkpor" target="_blank" rel="noopener" class="btn btn-orange" style="align-self: flex-start;">
+            <i class="fa-solid fa-directions"></i> Get Directions on WhatsApp
+          </a>
+        </div>
+
+        <!-- LIVE MAP EMBED -->
+        <div class="map-container animate-from-right">
+          <iframe
+            title="New Auto Spare Parts Market Nkpor Onitsha Map"
+            src="https://www.google.com/maps?q=New+Auto+Spare+Parts+Market,+Nkpor,+Onitsha,+Anambra+State&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Nkpor Heavy Duty Truck Parts</h3>
+          <p>
+            Specialized supplier of genuine and OEM components for heavy-duty vehicles and commercial trucks. Located in the New Auto Spare Parts Market, Nkpor, Onitsha, Anambra State.
+          </p>
+          <p><i class="fa-solid fa-phone" style="color: var(--accent-orange); margin-right: 8px;"></i> +234 803 000 4921</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Spare Parts Catalog</a></li>
+            <li><a href="#about">Why Choose Us</a></li>
+            <li><a href="#location">Market Location & Map</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Truck Brands Supported</h3>
+          <ul>
+            <li><span>Mercedes-Benz Actros / Atego</span></li>
+            <li><span>Mack Granite / Vision</span></li>
+            <li><span>Volvo FH / FM Series</span></li>
+            <li><span>MAN Diesel Trucks</span></li>
+            <li><span>Scania Commercial Fleet</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="yearNow"></span> Buzzor Sonic Auto Ventures. All Rights Reserved.</span>
+        <span>New Auto Spare Parts Market, Nkpor, Onitsha, Anambra State.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT FOR MOBILE MENU & SCROLL ANIMATIONS -->
+  <script>
+    document.getElementById('yearNow').textContent = new Date().getFullYear();
+
+    // Mobile Navigation Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('show');
+    }
+
+    // Scroll Animation Observer (Slide up / slide from sides on first scroll)
+    document.addEventListener("DOMContentLoaded", function () {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-from-left, .animate-from-right');
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target); // Animate only once when scrolling down for the first time
+          }
+        });
+      }, {
+        threshold: 0.12
+      });
+
+      animatedElements.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
