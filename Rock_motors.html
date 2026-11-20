@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Motors | Verified Cars for Sale in Awka, Anambra State</title>
+  <meta name="description" content="Buy inspected foreign-used and Nigerian-used cars in Awka, Anambra State. Transparent prices, verified customs papers, and instant WhatsApp support at Rock Motors." />
+  <style>
+    :root {
+      --bg-page: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --brand-primary: #1e3a8a;
+      --brand-primary-hover: #172554;
+      --whatsapp: #15803d;
+      --whatsapp-hover: #166534;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--brand-primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s ease, transform 0.1s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--brand-primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--brand-primary-hover);
+    }
+
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      color: #ffffff;
+    }
+
+    .btn-whatsapp:hover {
+      background: var(--whatsapp-hover);
+    }
+
+    .btn-outline {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      background: var(--bg-subtle);
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--bg-surface);
+      padding: 64px 0 56px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #eff6ff;
+      color: var(--brand-primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3.6vw, 2.85rem);
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.08rem;
+      margin-bottom: 28px;
+      max-width: 560px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .trust-strip span::before {
+      content: "✓ ";
+      color: var(--whatsapp);
+      font-weight: 700;
+    }
+
+    .hero-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-card-caption {
+      padding: 16px 20px;
+      background: var(--bg-surface);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    /* Quick Filter Bar */
+    .filter-bar {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      margin: -28px auto 48px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr) auto;
+      gap: 12px;
+    }
+
+    .filter-bar select,
+    .filter-bar input {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background: var(--bg-page);
+      color: var(--text-main);
+    }
+
+    /* Section Headings */
+    section {
+      padding: 48px 0;
+    }
+
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    .section-header h2 {
+      font-size: 1.75rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+    }
+
+    /* Inventory Grid (5 Cars) */
+    .cars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 24px;
+    }
+
+    .car-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .car-img-wrap {
+      position: relative;
+      height: 210px;
+      background: var(--bg-subtle);
+    }
+
+    .car-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .car-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .car-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .car-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .car-price {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+      margin-bottom: 10px;
+    }
+
+    .car-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .car-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .car-specs span {
+      background: var(--bg-subtle);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    /* Trust & Anti-Scam Section */
+    .trust-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .trust-box {
+      background: var(--bg-page);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .trust-box h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: var(--brand-primary);
+    }
+
+    .trust-box p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    /* Reviews */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .review-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .review-card p {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 14px;
+    }
+
+    .reviewer {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    /* Contact & Live Map */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .contact-card,
+    .map-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-details {
+      list-style: none;
+      margin: 16px 0 22px;
+      display: grid;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .contact-details strong {
+      color: var(--text-main);
+    }
+
+    .inquiry-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .inquiry-form input,
+    .inquiry-form select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .map-card {
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .map-card iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      border: 0;
+    }
+
+    /* Footer & Sticky WhatsApp */
+    footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .sticky-wa {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      box-shadow: 0 8px 20px rgba(21, 128, 61, 0.3);
+      border-radius: 999px;
+      padding: 13px 20px;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-bar {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+      }
+
+      .nav-links a.hide-mobile {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="logo">ROCK <span>MOTORS</span></a>
+      <nav class="nav-links">
+        <a href="#inventory" class="hide-mobile">Available Cars</a>
+        <a href="#why-us" class="hide-mobile">Inspection Guarantee</a>
+        <a href="#location" class="hide-mobile">Awka Lot &amp; Map</a>
+        <a href="https://wa.me/2348000000000?text=Hello%20Rock%20Motors%20Awka,%20I%20want%20to%20inquire%20about%20a%20car." target="_blank" rel="noopener" class="btn btn-whatsapp">Chat on WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">Trusted Auto Dealership • Awka, Anambra State</span>
+        <h1>Clean Foreign-Used &amp; Nigerian-Used Cars in Awka</h1>
+        <p>Every vehicle at Rock Motors undergoes full mechanical, AC, and customs paper verification before hitting our lot. Transparent prices—inspect in person or request a live walkaround video.</p>
+        <div class="hero-actions">
+          <a href="#inventory" class="btn btn-primary">Browse Available Cars (5)</a>
+          <a href="#location" class="btn btn-outline">Visit Our Awka Showroom</a>
+        </div>
+        <div class="trust-strip">
+          <span>Verified Customs Duty</span>
+          <span>100% Honest Condition Report</span>
+          <span>Swap &amp; Upgrade Welcome</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=80" alt="Rock Motors Showroom Awka" />
+        <div class="hero-card-caption">
+          <strong>Enugu–Onitsha Expressway, Awka</strong>
+          <span>Open Mon–Sat • 8:30 AM – 6:00 PM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instant Filter Bar -->
+  <div class="container">
+    <div class="filter-bar">
+      <select id="filterCondition" onchange="filterCars()">
+        <option value="all">All Conditions (Tokunbo &amp; Nigerian-Used)</option>
+        <option value="Foreign-Used">Foreign-Used (Tokunbo)</option>
+        <option value="Nigerian-Used">Nigerian-Used</option>
+      </select>
+      <select id="filterType" onchange="filterCars()">
+        <option value="all">All Body Types (SUVs &amp; Sedans)</option>
+        <option value="Sedan">Sedans</option>
+        <option value="SUV">SUVs</option>
+      </select>
+      <select id="filterBudget" onchange="filterCars()">
+        <option value="all">Any Budget</option>
+        <option value="under15">Under ₦15,000,000</option>
+        <option value="15to25">₦15,000,000 – ₦25,000,000</option>
+        <option value="above25">Above ₦25,000,000</option>
+      </select>
+      <button type="button" class="btn btn-primary" onclick="filterCars()">Filter Cars</button>
+    </div>
+  </div>
+
+  <!-- Featured Inventory (5 Cars) -->
+  <section id="inventory">
+    <div class="container">
+      <div class="section-header">
+        <h2>Available Cars at Rock Motors</h2>
+        <p>Handpicked, road-tested vehicles currently parked at our Awka lot with upfront pricing.</p>
+      </div>
+
+      <div class="cars-grid" id="carsGrid">
+        <!-- Car 1 -->
+        <article class="car-card" data-condition="Foreign-Used" data-type="Sedan" data-price="14800000">
+          <div class="car-img-wrap">
+            <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=800&q=80" alt="2015 Toyota Camry SE" loading="lazy" />
+            <span class="car-tag">Foreign-Used (Tokunbo)</span>
+          </div>
+          <div class="car-body">
+            <h3 class="car-title">2015 Toyota Camry SE</h3>
+            <div class="car-price">₦14,800,000</div>
+            <p class="car-desc">Accident-free Tokunbo unit with original factory paint, chilling dual-zone AC, reverse camera, and complete customs duty documents.</p>
+            <div class="car-specs">
+              <span>Automatic</span>
+              <span>4-Cylinder Petrol</span>
+              <span>68,000 mi</span>
+            </div>
+            <a href="https://wa.me/2348000000000?text=Hello%20Rock%20Motors,%20I%20am%20interested%20in%20the%202015%20Toyota%20Camry%20SE%20(₦14,800,000)." target="_blank" rel="noopener" class="btn btn-whatsapp">Inspect / Chat on WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Car 2 -->
+        <article class="car-card" data-condition="Foreign-Used" data-type="SUV" data-price="23500000">
+          <div class="car-img-wrap">
+            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80" alt="2014 Lexus RX 350" loading="lazy" />
+            <span class="car-tag">Foreign-Used (Tokunbo)</span>
+          </div>
+          <div class="car-body">
+            <h3 class="car-title">2014 Lexus RX 350</h3>
+            <div class="car-price">₦23,500,000</div>
+            <p class="car-desc">Clean cream leather interior, thumbstart ignition, power tailgate, smooth V6 engine, and zero dashboard warning lights.</p>
+            <div class="car-specs">
+              <span>Automatic</span>
+              <span>V6 Petrol</span>
+              <span>74,500 mi</span>
+            </div>
+            <a href="https://wa.me/2348000000000?text=Hello%20Rock%20Motors,%20I%20am%20interested%20in%20the%202014%20Lexus%20RX%20350%20(₦23,500,000)." target="_blank" rel="noopener" class="btn btn-whatsapp">Inspect / Chat on WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Car 3 -->
+        <article class="car-card" data-condition="Nigerian-Used" data-type="Sedan" data-price="9200000">
+          <div class="car-img-wrap">
+            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80" alt="2016 Honda Accord Sport" loading="lazy" />
+            <span class="car-tag">Nigerian-Used</span>
+          </div>
+          <div class="car-body">
+            <h3 class="car-title">2016 Honda Accord Sport</h3>
+            <div class="car-price">₦9,200,000</div>
+            <p class="car-desc">Neatly used by one owner in Awka. Sound engine and gear transmission, alloy wheels, sharp suspension, and valid papers.</p>
+            <div class="car-specs">
+              <span>Automatic</span>
+              <span>4-Cylinder Petrol</span>
+              <span>91,000 mi</span>
+            </div>
+            <a href="https://wa.me/2348000000000?text=Hello%20Rock%20Motors,%20I%20am%20interested%20in%20the%202016%20Honda%20Accord%20Sport%20(₦9,200,000)." target="_blank" rel="noopener" class="btn btn-whatsapp">Inspect / Chat on WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Car 4 -->
+        <article class="car-card" data-condition="Foreign-Used" data-type="SUV" data-price="28900000">
+          <div class="car-img-wrap">
+            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="2017 Toyota Highlander XLE" loading="lazy" />
+            <span class="car-tag">Foreign-Used (Tokunbo)</span>
+          </div>
+          <div class="car-body">
+            <h3 class="car-title">2017 Toyota Highlander XLE</h3>
+            <div class="car-price">₦28,900,000</div>
+            <p class="car-desc">3-row family SUV with panoramic sunroof, blind-spot monitoring, navigation screen, and verified full customs duty paid.</p>
+            <div class="car-specs">
+              <span>Automatic</span>
+              <span>V6 Petrol</span>
+              <span>61,200 mi</span>
+            </div>
+            <a href="https://wa.me/2348000000000?text=Hello%20Rock%20Motors,%20I%20am%20interested%20in%20the%202017%20Toyota%20Highlander%20XLE%20(₦28,900,000)." target="_blank" rel="noopener" class="btn btn-whatsapp">Inspect / Chat on WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Car 5 -->
+        <article class="car-card" data-condition="Nigerian-Used" data-type="SUV" data-price="11500000">
+          <div class="car-img-wrap">
+            <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80" alt="2013 Toyota RAV4 Limited" loading="lazy" />
+            <span class="car-tag">Nigerian-Used</span>
+          </div>
+          <div class="car-body">
+            <h3 class="car-title">2013 Toyota RAV4 Limited</h3>
+            <div class="car-price">₦11,500,000</div>
+            <p class="car-desc">Fuel-efficient compact SUV ideal for Anambra roads. Ice-cold AC, clean fabric/leather trim, and freshly serviced engine.</p>
+            <div class="car-specs">
+              <span>Automatic</span>
+              <span>4-Cylinder Petrol</span>
+              <span>84,000 mi</span>
+            </div>
+            <a href="https://wa.me/2348000000000?text=Hello%20Rock%20Motors,%20I%20am%20interested%20in%20the%202013%20Toyota%20RAV4%20Limited%20(₦11,500,000)." target="_blank" rel="noopener" class="btn btn-whatsapp">Inspect / Chat on WhatsApp</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust & Anti-Scam Proof -->
+  <section id="why-us" class="trust-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Buyers Across Anambra Trust Rock Motors</h2>
+        <p>No hidden faults, no fake VIN histories, and no wasted trips.</p>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-box">
+          <h3>Multi-Point Pre-Sale Check</h3>
+          <p>We inspect engine compression, gear shifting, AC cooling, suspension, and computer diagnostics before listing any car.</p>
+        </div>
+        <div class="trust-box">
+          <h3>Verified Papers &amp; Customs</h3>
+          <p>All foreign-used vehicles come with verifiable customs duty papers, and Nigerian-used cars undergo ownership verification.</p>
+        </div>
+        <div class="trust-box">
+          <h3>Bring Your Mechanic</h3>
+          <p>You are welcome to visit our Awka lot with your trusted technician or OBD scanner for an independent inspection and test drive.</p>
+        </div>
+        <div class="trust-box">
+          <h3>Car Swap &amp; Upgrade</h3>
+          <p>Looking to upgrade your current ride? Bring your clean Nigerian-used vehicle for a fair, transparent valuation toward any car on our lot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Social Proof -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>Recent Buyers in Awka &amp; Surrounding Towns</h2>
+        <p>Real feedback from drivers who bought from Rock Motors.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <p>“I found Rock Motors online, requested a live video of the Camry on WhatsApp, and drove down from Aroma to inspect it. Everything matched what they told me.”</p>
+          <div class="reviewer">— Chinedu O., Udoka Housing Estate, Awka</div>
+        </div>
+        <div class="review-card">
+          <p>“They let my mechanic run a full diagnostic scan on the RX 350 without rushing us. Customs papers were verified the same afternoon.”</p>
+          <div class="reviewer">— Engr. Ikenna M., Nnewi</div>
+        </div>
+        <div class="review-card">
+          <p>“Swapped my old Corolla for a clean RAV4 at a fair top-up price. Straightforward business with zero stories.”</p>
+          <div class="reviewer">— Adaobi N., Agu-Awka</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Live Map Section -->
+  <section id="location" class="trust-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Visit Rock Motors in Awka</h2>
+        <p>Stop by for a physical inspection or book a test drive ahead of time.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Showroom &amp; Contact Details</h3>
+          <ul class="contact-details">
+            <li><strong>Address:</strong> Plot 42, Enugu–Onitsha Expressway, near Regina Caeli Junction, Awka, Anambra State</li>
+            <li><strong>Phone / WhatsApp:</strong> +234 800 000 0000</li>
+            <li><strong>Opening Hours:</strong> Monday – Saturday, 8:30 AM – 6:00 PM</li>
+          </ul>
+
+          <form class="inquiry-form" onsubmit="sendWhatsAppInquiry(event)">
+            <input type="text" id="buyerName" placeholder="Your Full Name" required />
+            <input type="tel" id="buyerPhone" placeholder="Your Phone / WhatsApp Number" required />
+            <select id="buyerCar">
+              <option value="General Inquiry">Select a Car of Interest</option>
+              <option value="2015 Toyota Camry SE (₦14,800,000)">2015 Toyota Camry SE — ₦14,800,000</option>
+              <option value="2014 Lexus RX 350 (₦23,500,000)">2014 Lexus RX 350 — ₦23,500,000</option>
+              <option value="2016 Honda Accord Sport (₦9,200,000)">2016 Honda Accord Sport — ₦9,200,000</option>
+              <option value="2017 Toyota Highlander XLE (₦28,900,000)">2017 Toyota Highlander XLE — ₦28,900,000</option>
+              <option value="2013 Toyota RAV4 Limited (₦11,500,000)">2013 Toyota RAV4 Limited — ₦11,500,000</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Book Inspection via WhatsApp</button>
+          </form>
+        </div>
+
+        <!-- Live Interactive Google Map centered on Awka, Anambra State -->
+        <div class="map-card">
+          <iframe
+            title="Rock Motors Location in Awka, Anambra State"
+            src="https://www.google.com/maps?q=Awka,+Anambra+State,+Nigeria&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Rock Motors Awka, Anambra State. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile/Desktop WhatsApp CTA -->
+  <a href="https://wa.me/2348000000000?text=Hello%20Rock%20Motors%20Awka,%20I%20would%20like%20to%20book%20a%20car%20inspection." target="_blank" rel="noopener" class="btn btn-whatsapp sticky-wa">
+    WhatsApp Rock Motors
+  </a>
+
+  <script>
+    function filterCars() {
+      const condition = document.getElementById("filterCondition").value;
+      const type = document.getElementById("filterType").value;
+      const budget = document.getElementById("filterBudget").value;
+      const cards = document.querySelectorAll(".car-card");
+
+      cards.forEach((card) => {
+        const cardCondition = card.getAttribute("data-condition");
+        const cardType = card.getAttribute("data-type");
+        const cardPrice = parseInt(card.getAttribute("data-price"), 10);
+
+        const matchCondition = condition === "all" || cardCondition === condition;
+        const matchType = type === "all" || cardType === type;
+
+        let matchBudget = true;
+        if (budget === "under15") matchBudget = cardPrice < 15000000;
+        if (budget === "15to25") matchBudget = cardPrice >= 15000000 && cardPrice <= 25000000;
+        if (budget === "above25") matchBudget = cardPrice > 25000000;
+
+        card.style.display = matchCondition && matchType && matchBudget ? "flex" : "none";
+      });
+    }
+
+    function sendWhatsAppInquiry(event) {
+      event.preventDefault();
+      const name = document.getElementById("buyerName").value.trim();
+      const phone = document.getElementById("buyerPhone").value.trim();
+      const car = document.getElementById("buyerCar").value;
+      const message = `Hello Rock Motors Awka, my name is ${name} (${phone}). I would like to book an inspection for: ${car}.`;
+      window.open(`https://wa.me/2348000000000?text=${encodeURIComponent(message)}`, "_blank");
+    }
+  </script>
+</body>
+</html>
